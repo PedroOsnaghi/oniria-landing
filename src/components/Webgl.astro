@@ -197,7 +197,7 @@
             scrollTrigger: {
               trigger: "body",
               start: "top top",
-              end: "250% bottom",
+              end: "350% bottom", // Extendido para acomodar la fase 3
               scrub: 0,
               anticipatePin: 1,
               fastScrollEnd: true,
@@ -221,8 +221,8 @@
             },
             {
               y: 0,
-              duration: 50,
-              ease: "none",
+              duration: 150,
+              ease: "power2.inOut",
               onStart: () => console.log("FASE 1: Movimiento hacia el centro"),
               onComplete: () =>
                 console.log("FASE 1: Completado - nodo en el centro"),
@@ -235,16 +235,30 @@
             node.position,
             {
               x: 1.8,
-              duration: 30,
-              ease: "power2.in",
+              duration: 55,
+              ease: "power2.out",
               onStart: () => console.log("FASE 2: Movimiento a la derecha"),
               onComplete: () =>
                 console.log("FASE 2: Completado movimiento final"),
             },
-            70
+            210
           );
 
-          // ESCALA
+          // FASE 3: Mover hacia arriba (sincronizado con IntroSplit)
+          scrollTimeline.to(
+            node.position,
+            {
+              y: 5, // Mover hacia arriba (valor positivo = arriba)
+              duration: 150, // Duración de la fase 3
+              ease: "power2.inOut",
+              onStart: () =>
+                console.log("FASE 3: Movimiento hacia arriba iniciado"),
+              onComplete: () => console.log("FASE 3: Completado - nodo arriba"),
+            },
+            380 // Empieza en el tiempo 100 (después de fase 2)
+          );
+
+          // ESCALA: Durante todo el proceso (incluyendo fase 3)
           scrollTimeline.fromTo(
             node.scale,
             {
@@ -253,13 +267,14 @@
               z: initialScale,
             },
             {
-              x: 1.2,
-              y: 1.2,
-              z: 1.2,
-              duration: 100,
+              x: 1.5,
+              y: 1.5,
+              z: 1.5,
+              duration: 140, // Extendido para cubrir todas las fases (era 100)
               ease: "power2.inOut",
-              onStart: () => console.log("Iniciando cambio de escala"),
-              onComplete: () => console.log("Completado cambio de escala"),
+              onStart: () => console.log("Iniciando cambio de escala global"),
+              onComplete: () =>
+                console.log("Completado cambio de escala global"),
             },
             0
           );
@@ -283,7 +298,7 @@
 
         animate();
 
-        // Resize handler
+        // // Resize handler
         function onWindowResize() {
           const newWidth = Math.min(
             window.innerWidth,

@@ -258,31 +258,14 @@
       const setupCardScrollSync = () => {
         const { gsap, ScrollTrigger } = window as any;
 
-        // 🔧 Configuración especial para iOS
-        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-
-        if (isIOS || isSafari) {
-          // Desactivar scroll smooth en iOS
-          document.documentElement.style.scrollBehavior = 'auto';
-          
-          // Configurar ScrollTrigger para iOS
-          ScrollTrigger.config({
-            autoRefreshEvents: "resize,visibilitychange,DOMContentLoaded,load",
-            ignoreMobileResize: true
-          });
-        }
-
         // Crear timeline principal maestro
         const mainTimeline = gsap.timeline({
           scrollTrigger: {
             trigger: "body",
-            start: "30% top", 
+            start: "30% top", // Empieza cuando hayas scrolleado 30% de la pantalla
             end: "250% bottom",
-            scrub: isIOS ? 0.5 : 1, // Scrub más suave en iOS
+            scrub: 1,
             refreshPriority: -90,
-            anticipatePin: 1, // Ayuda con performance en móviles
-            fastScrollEnd: true, // Mejora momentum scrolling
             onUpdate: (self: any) => {
               // Controlar typing basado en el progreso del scroll
               const progress = self.progress;
