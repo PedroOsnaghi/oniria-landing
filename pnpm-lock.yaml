@@ -38,6 +38,16 @@ importers:
       tailwindcss:
         specifier: ^4.1.14
         version: 4.1.14
+      three:
+        specifier: ^0.180.0
+        version: 0.180.0
+      vite-plugin-glsl:
+        specifier: ^1.5.1
+        version: 1.5.4(@rollup/pluginutils@5.3.0(rollup@4.52.4))(esbuild@0.25.11)(vite@6.4.0(@types/node@24.8.1)(jiti@2.6.1)(lightningcss@1.30.1))
+    devDependencies:
+      '@types/three':
+        specifier: ^0.180.0
+        version: 0.180.0
 
 packages:
 
@@ -156,6 +166,9 @@ packages:
   '@capsizecss/unpack@3.0.0':
     resolution: {integrity: sha512-+ntATQe1AlL7nTOYjwjj6w3299CgRot48wL761TUGYpYgAou3AaONZazp0PKZyCyWhudWsjhq1nvRHOvbMzhTA==}
     engines: {node: '>=18'}
+
+  '@dimforge/rapier3d-compat@0.12.0':
+    resolution: {integrity: sha512-uekIGetywIgopfD97oDL5PfeezkFpNhwlzlaEYNOA0N6ghdsOvh/HYjSMek5Q2O1PYvRSDFcqFVJl4r4ZBwOow==}
 
   '@emnapi/runtime@1.5.0':
     resolution: {integrity: sha512-97/BJ3iXHww3djw6hYIfErCZFee7qCtrneuLa20UXFCOTCfBM2cvQHjWJ2EG0s0MtdNwInarqCTz35i4wWXHsQ==}
@@ -701,6 +714,9 @@ packages:
     peerDependencies:
       vite: ^5.2.0 || ^6 || ^7
 
+  '@tweenjs/tween.js@23.1.3':
+    resolution: {integrity: sha512-vJmvvwFxYuGnF2axRtPYocag6Clbb5YS7kLL+SO/TeVFzHqDIWrNKYtcsPMibjDx9O+bu+psAy9NKfWklassUA==}
+
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
 
@@ -751,8 +767,17 @@ packages:
   '@types/sax@1.2.7':
     resolution: {integrity: sha512-rO73L89PJxeYM3s3pPPjiPgVVcymqU490g0YO5n5By0k2Erzj6tay/4lr1CHAAU4JyOWd1rpQ8bCf6cZfHU96A==}
 
+  '@types/stats.js@0.17.4':
+    resolution: {integrity: sha512-jIBvWWShCvlBqBNIZt0KAshWpvSjhkwkEu4ZUcASoAvhmrgAUI2t1dXrjSL4xXVLB4FznPrIsX3nKXFl/Dt4vA==}
+
+  '@types/three@0.180.0':
+    resolution: {integrity: sha512-ykFtgCqNnY0IPvDro7h+9ZeLY+qjgUWv+qEvUt84grhenO60Hqd4hScHE7VTB9nOQ/3QM8lkbNE+4vKjEpUxKg==}
+
   '@types/unist@3.0.3':
     resolution: {integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==}
+
+  '@types/webxr@0.5.24':
+    resolution: {integrity: sha512-h8fgEd/DpoS9CBrjEQXR+dIDraopAEfu4wYVNY2tEPwk60stPWhvZMf4Foo5FakuQ7HFZoa8WceaWFervK2Ovg==}
 
   '@ungap/structured-clone@1.3.0':
     resolution: {integrity: sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==}
@@ -762,6 +787,9 @@ packages:
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
+
+  '@webgpu/types@0.1.66':
+    resolution: {integrity: sha512-YA2hLrwLpDsRueNDXIMqN9NTzD6bCDkuXbOSe0heS+f8YE8usA6Gbv1prj81pzVHrbaAma7zObnIC+I6/sXJgA==}
 
   acorn@8.15.0:
     resolution: {integrity: sha512-NZyJarBfL7nWwIq+FDL6Zp/yHEhePMNnnJ0y3qfieCrmNvYct8uvtiV41UvlSe6apAfk0fY1FbWx+NwfmpvtTg==}
@@ -1019,6 +1047,9 @@ packages:
       picomatch:
         optional: true
 
+  fflate@0.8.2:
+    resolution: {integrity: sha512-cPJU47OaAoCbg0pBvzsgpTPhmhqI5eJjh/JIu8tPj5q+T7iLvW/JAYUqmE7KOB4R1ZyEhzBaIQpQpardBF5z8A==}
+
   flattie@1.1.1:
     resolution: {integrity: sha512-9UbaD6XdAL97+k/n+N7JwX46K/M6Zc6KcFYskrYL8wbBV/Uyk0CTAMY0VT+qiK5PM7AIc9aTWYtq65U7T+aCNQ==}
     engines: {node: '>=8'}
@@ -1273,6 +1304,9 @@ packages:
 
   mdn-data@2.12.2:
     resolution: {integrity: sha512-IEn+pegP1aManZuckezWCO+XZQDplx1366JoVhTpMpBB1sPey/SbveZQUosKiKiGYjg1wH4pMlNgXbCiYgihQA==}
+
+  meshoptimizer@0.22.0:
+    resolution: {integrity: sha512-IebiK79sqIy+E4EgOr+CAw+Ke8hAspXKzBd0JdgEmPHiAwmvEj2S4h1rfvo+o/BnfEYd/jAOg5IeeIjzlzSnDg==}
 
   micromark-core-commonmark@2.0.3:
     resolution: {integrity: sha512-RDBrHEMSxVFLg6xvnXmb1Ayr2WzLAWjeSATAoxwKYJV94TeNavgoIdA0a9ytzDSVzBy2YKFK+emCPOEibLeCrg==}
@@ -1614,6 +1648,9 @@ packages:
     resolution: {integrity: sha512-nlGpxf+hv0v7GkWBK2V9spgactGOp0qvfWRxUMjqHyzrt3SgwE48DIv/FhqPHJYLHpgW1opq3nERbz5Anq7n1g==}
     engines: {node: '>=18'}
 
+  three@0.180.0:
+    resolution: {integrity: sha512-o+qycAMZrh+TsE01GqWUxUIKR1AL0S8pq7zDkYOQw8GqfX8b8VoCKYUoHbhiX5j+7hr8XsuHDVU6+gkQJQKg9w==}
+
   tiny-inflate@1.0.3:
     resolution: {integrity: sha512-pkY1fj1cKHb2seWDy0B16HeWyczlJA9/WW3u3c4z/NiWDsO3DOU5D7nhTLE9CF0yXv/QZFY7sEJmj24dK+Rrqw==}
 
@@ -1779,6 +1816,19 @@ packages:
 
   vfile@6.0.3:
     resolution: {integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==}
+
+  vite-plugin-glsl@1.5.4:
+    resolution: {integrity: sha512-EUmwL+IDK+dGDAlaKm89++k8aJ4qmHjLQxrngww3GLOOAQ4aZ48o9YR1ie7XPe08iDWlG+9Uh5V7oiZcXTUbyA==}
+    engines: {node: '>= 20.17.0', npm: '>= 10.8.3'}
+    peerDependencies:
+      '@rollup/pluginutils': ^5.x
+      esbuild: '>= 0.25'
+      vite: '>= 3.x'
+    peerDependenciesMeta:
+      '@rollup/pluginutils':
+        optional: true
+      esbuild:
+        optional: true
 
   vite@6.4.0:
     resolution: {integrity: sha512-oLnWs9Hak/LOlKjeSpOwD6JMks8BeICEdYMJBf6P4Lac/pO9tKiv/XhXnAM7nNfSkZahjlCZu9sS50zL8fSnsw==}
@@ -2078,6 +2128,8 @@ snapshots:
   '@capsizecss/unpack@3.0.0':
     dependencies:
       fontkit: 2.0.4
+
+  '@dimforge/rapier3d-compat@0.12.0': {}
 
   '@emnapi/runtime@1.5.0':
     dependencies:
@@ -2460,6 +2512,8 @@ snapshots:
       tailwindcss: 4.1.14
       vite: 6.4.0(@types/node@24.8.1)(jiti@2.6.1)(lightningcss@1.30.1)
 
+  '@tweenjs/tween.js@23.1.3': {}
+
   '@types/babel__core@7.20.5':
     dependencies:
       '@babel/parser': 7.28.4
@@ -2523,7 +2577,21 @@ snapshots:
     dependencies:
       '@types/node': 24.8.1
 
+  '@types/stats.js@0.17.4': {}
+
+  '@types/three@0.180.0':
+    dependencies:
+      '@dimforge/rapier3d-compat': 0.12.0
+      '@tweenjs/tween.js': 23.1.3
+      '@types/stats.js': 0.17.4
+      '@types/webxr': 0.5.24
+      '@webgpu/types': 0.1.66
+      fflate: 0.8.2
+      meshoptimizer: 0.22.0
+
   '@types/unist@3.0.3': {}
+
+  '@types/webxr@0.5.24': {}
 
   '@ungap/structured-clone@1.3.0': {}
 
@@ -2538,6 +2606,8 @@ snapshots:
       vite: 6.4.0(@types/node@24.8.1)(jiti@2.6.1)(lightningcss@1.30.1)
     transitivePeerDependencies:
       - supports-color
+
+  '@webgpu/types@0.1.66': {}
 
   acorn@8.15.0: {}
 
@@ -2846,6 +2916,8 @@ snapshots:
   fdir@6.5.0(picomatch@4.0.3):
     optionalDependencies:
       picomatch: 4.0.3
+
+  fflate@0.8.2: {}
 
   flattie@1.1.1: {}
 
@@ -3204,6 +3276,8 @@ snapshots:
       '@types/mdast': 4.0.4
 
   mdn-data@2.12.2: {}
+
+  meshoptimizer@0.22.0: {}
 
   micromark-core-commonmark@2.0.3:
     dependencies:
@@ -3736,6 +3810,8 @@ snapshots:
       minizlib: 3.1.0
       yallist: 5.0.0
 
+  three@0.180.0: {}
+
   tiny-inflate@1.0.3: {}
 
   tinyexec@1.0.1: {}
@@ -3866,6 +3942,13 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
+
+  vite-plugin-glsl@1.5.4(@rollup/pluginutils@5.3.0(rollup@4.52.4))(esbuild@0.25.11)(vite@6.4.0(@types/node@24.8.1)(jiti@2.6.1)(lightningcss@1.30.1)):
+    dependencies:
+      vite: 6.4.0(@types/node@24.8.1)(jiti@2.6.1)(lightningcss@1.30.1)
+    optionalDependencies:
+      '@rollup/pluginutils': 5.3.0(rollup@4.52.4)
+      esbuild: 0.25.11
 
   vite@6.4.0(@types/node@24.8.1)(jiti@2.6.1)(lightningcss@1.30.1):
     dependencies:

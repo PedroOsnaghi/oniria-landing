@@ -8,22 +8,28 @@ import ExploreGrid from "../components/ExploreGrid.astro";
 import HowItWorks from "../components/HowItWorks.astro";
 import ImmersiveExperience from "../components/ImmersiveExperience.astro";
 import First from "../components/First.astro";
+import WebGL from "../components/Webgl.astro";
+import CardDream from "../components/card-dream.astro";
 
 const page = {
-	title: "Oniria — Tus sueños tienen algo que contarte",
-	description: "Landing moderna, veloz y SEO-first en Astro + React.",
-	url: new URL("/", Astro.site).href,
-	image: new URL("/og.jpg", Astro.site).href,
+  title: "Oniria — Tus sueños tienen algo que contarte",
+  description: "Landing moderna, veloz y SEO-first en Astro + React.",
+  url: new URL("/", Astro.site).href,
+  image: new URL("/og.jpg", Astro.site).href,
 };
 ---
 
 <BaseLayout {...page}>
-	<Navbar />
-	<First client:load />
-	<IntroSplit client:load />
-	<ConnectText />
-	<ExploreGrid client:load />
-	<HowItWorks />
-	<ImmersiveExperience client:load />
-	<PricingSection />
+  <WebGL />
+  <header class="h-screen">
+    <Navbar />
+    <First />
+  </header>
+  <CardDream />
+  <IntroSplit />
+  <ConnectText />
+  <ExploreGrid />
+  <HowItWorks />
+  <ImmersiveExperience />
+  <PricingSection />
 </BaseLayout>

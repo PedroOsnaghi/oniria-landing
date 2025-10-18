@@ -5,14 +5,16 @@
   ],
   "include": [
     ".astro/types.d.ts",
-    "src/**/*"
+    "src/**/*",
+    "src/types/**/*.d.ts"
   ],
   "exclude": [
-    "dist",
-    "**/*.astro"
+    "dist"
   ],
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxImportSource": "react"
+    "jsxImportSource": "react",
+    "types": ["@types/three"],
+    "moduleResolution": "bundler"
   }
 }

@@ -1,0 +1,477 @@
+<!-- Contenedor de las 3 tarjetas -->
+<div
+  class="fixed inset-0 z-20 flex items-center justify-center px-8 overflow-hidden pointer-events-none"
+>
+  <div class="flex justify-between w-full max-w-7xl">
+    <!-- Tarjeta Izquierda -->
+    <div
+      id="dream-card-left"
+      class="dream-card rounded-xl w-[28%] border border-white/12 bg-white/[0.03] backdrop-blur-md p-3 shadow-[0_8px_40px_rgba(0,0,0,.35)] opacity-0 pointer-events-none"
+    >
+      <h5 class="font-righteous text-[18px] text-grisclarotwo">
+        ¿Qué soñaste?
+      </h5>
+      <div
+        class="rounded-xl border border-white/12 bg-gray-700/[0.53] mt-3 backdrop-blur-md p-2 pb-12 min-h-32 shadow-[0_8px_40px_rgba(0,0,0,.25)]"
+      >
+        <p
+          class="typing-text font-inder text-[14px] text-grisclarotwo typing-container"
+          data-text="Describe tu sueño con tus propias palabras. Cada detalle, emoción y sensación importa para crear tu análisis personalizado."
+        >
+          <span class="typed-content"></span>
+          <span class="typing-cursor">|</span>
+        </p>
+      </div>
+      <div class="mt-4 grid place-items-center">
+        <div class="relative">
+          <div
+            class="absolute -inset-10 blur-2xl opacity-60"
+            style="background: radial-gradient(120px 120px at 50% 50%, rgba(216,70,239,.35), rgba(0,0,0,0));"
+          >
+          </div>
+          <div class="loader mb-4">
+            <svg width="100" height="100" viewBox="0 0 100 100">
+              <defs>
+                <mask id="clipping">
+                  <polygon points="0,0 100,0 100,100 0,100" fill="black"
+                  ></polygon>
+                  <polygon points="25,25 75,25 50,75" fill="white"></polygon>
+                  <polygon points="50,25 75,75 25,75" fill="white"></polygon>
+                  <polygon points="35,35 65,35 50,65" fill="white"></polygon>
+                  <polygon points="35,35 65,35 50,65" fill="white"></polygon>
+                  <polygon points="35,35 65,35 50,65" fill="white"></polygon>
+                  <polygon points="35,35 65,35 50,65" fill="white"></polygon>
+                </mask>
+              </defs>
+            </svg>
+            <div class="box"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta Centro -->
+    <div
+      id="dream-card-center"
+      class="dream-card rounded-xl w-[28%] border border-white/12 bg-gray-900/[0.53] backdrop-blur-md p-3 shadow-[0_8px_40px_rgba(0,0,0,.35)] opacity-0 pointer-events-none"
+    >
+      <h5 class="font-righteous text-[18px] text-grisclarotwo">
+        Interpretación
+      </h5>
+      <div
+        class="rounded-xl border border-white/12 bg-gray-700/[0.53] mt-3 backdrop-blur-md p-2 pb-12 min-h-32 shadow-[0_8px_40px_rgba(0,0,0,.25)]"
+      >
+        <p
+          class="typing-text font-inder text-[14px] text-grisclarotwo typing-container"
+          data-text="Cada símbolo, emoción y escena es decodificada para revelarte patrones ocultos de tu mente."
+        >
+          <span class="typed-content"></span>
+          <span class="typing-cursor">|</span>
+        </p>
+      </div>
+      <div class="mt-4 grid place-items-center">
+        <div class="relative">
+          <div class="loader-radar mb-4">
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta Derecha -->
+    <div
+      id="dream-card-right"
+      class="dream-card rounded-xl w-[28%] border border-white/12 bg-white/[0.03] backdrop-blur-md p-3 shadow-[0_8px_40px_rgba(0,0,0,.35)] opacity-0 pointer-events-none"
+    >
+      <h5 class="font-righteous text-[18px] text-grisclarotwo">
+        Tu Mundo Interior
+      </h5>
+      <div
+        class="rounded-xl border border-white/12 bg-gray-700/[0.53] mt-3 backdrop-blur-md p-2 pb-12 min-h-32 shadow-[0_8px_40px_rgba(0,0,0,.25)]"
+      >
+        <p
+          class="typing-text font-inder text-[14px] text-grisclarotwo typing-container"
+          data-text="Descubre conexiones profundas entre tus sueños y tu realidad consciente e inconsciente."
+        >
+          <span class="typed-content"></span>
+          <span class="typing-cursor">|</span>
+        </p>
+      </div>
+      <div class="mt-4 grid place-items-center">
+        <div class="relative">
+          <div
+            class="absolute -inset-10 blur-2xl opacity-60"
+            style="background: radial-gradient(120px 120px at 50% 50%, rgba(239,216,70,.35), rgba(0,0,0,0));"
+          >
+          </div>
+          <div class="loader mb-4">
+            <svg width="100" height="100" viewBox="0 0 100 100">
+              <defs>
+                <mask id="clipping">
+                  <polygon points="0,0 100,0 100,100 0,100" fill="black"
+                  ></polygon>
+                  <polygon points="25,25 75,25 50,75" fill="white"></polygon>
+                  <polygon points="50,25 75,75 25,75" fill="white"></polygon>
+                  <polygon points="35,35 65,35 50,65" fill="white"></polygon>
+                  <polygon points="35,35 65,35 50,65" fill="white"></polygon>
+                  <polygon points="35,35 65,35 50,65" fill="white"></polygon>
+                  <polygon points="35,35 65,35 50,65" fill="white"></polygon>
+                </mask>
+              </defs>
+            </svg>
+            <div class="box"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .typing-cursor {
+    animation: blink 1s infinite;
+    font-weight: bold;
+  }
+
+  @keyframes blink {
+    0%,
+    50% {
+      opacity: 1;
+    }
+    61%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .typing-container {
+    min-height: 4em;
+    height: 4em;
+    overflow: hidden;
+  }
+
+  .dream-card {
+    will-change: transform, opacity;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    /* GSAP maneja las transformaciones */
+  }
+
+  .dream-card:hover {
+    filter: brightness(1.1);
+  }
+
+  @media (max-width: 768px) {
+    .dream-card {
+      width: 90% !important;
+      margin: 0 auto 1rem auto;
+    }
+
+    .flex {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+
+<script>
+  // Componente de cards usando WebGL Manager
+
+  function initCardsComponent() {
+    console.log("🃏 Initializing Cards component...");
+
+    // Configurar efectos de typing para todas las tarjetas
+    const typingElements = document.querySelectorAll(".typing-text");
+    const typingAnimations = new Map();
+
+    typingElements.forEach((typingElement, index) => {
+      const textToType = typingElement.getAttribute("data-text") || "";
+      const typedTextElement = typingElement.querySelector(".typed-content");
+
+      if (!typedTextElement) return;
+
+      let charIndex = 0;
+      let isTyping = false;
+      const typingSpeed = 50;
+      const pauseBetweenLoops = 4000;
+
+      function typeText() {
+        if (!isTyping) return; // Permitir pausar/detener
+
+        if (charIndex < textToType.length && typedTextElement) {
+          typedTextElement.textContent += textToType.charAt(charIndex);
+          charIndex++;
+          setTimeout(typeText, typingSpeed);
+        } else {
+          setTimeout(() => {
+            if (typedTextElement && isTyping) {
+              typedTextElement.textContent = "";
+              charIndex = 0;
+              typeText();
+            }
+          }, pauseBetweenLoops);
+        }
+      }
+
+      // Funciones de control para GSAP
+      const startTyping = () => {
+        if (!isTyping) {
+          isTyping = true;
+          typeText();
+        }
+      };
+
+      const stopTyping = () => {
+        isTyping = false;
+      };
+
+      // Almacenar referencia para control desde GSAP
+      typingAnimations.set(typingElement, {
+        start: startTyping,
+        stop: stopTyping,
+      });
+    });
+
+    // Sincronización con el nodo WebGL usando ScrollTrigger - Ahora para 3 tarjetas
+    const dreamCards = [
+      { element: document.getElementById("dream-card-left"), delay: 0 },
+      { element: document.getElementById("dream-card-center"), delay: 0.1 },
+      { element: document.getElementById("dream-card-right"), delay: 0.2 },
+    ];
+
+    if (
+      dreamCards.some((card) => card.element) &&
+      typeof window !== "undefined"
+    ) {
+      // Esperar a que GSAP y ScrollTrigger estén disponibles
+      const initCardAnimation = () => {
+        // Verificar si ScrollTrigger está disponible globalmente
+        if ((window as any).gsap && (window as any).ScrollTrigger) {
+          setupCardScrollSync();
+        } else {
+          // Intentar cargar GSAP y ScrollTrigger si no están disponibles
+          loadGSAPAndSetup();
+        }
+      };
+
+      const setupCardScrollSync = () => {
+        const { gsap, ScrollTrigger } = window as any;
+
+        // 🔧 Configuración especial para iOS
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+        if (isIOS || isSafari) {
+          // Desactivar scroll smooth en iOS
+          document.documentElement.style.scrollBehavior = 'auto';
+          
+          // Configurar ScrollTrigger para iOS
+          ScrollTrigger.config({
+            autoRefreshEvents: "resize,visibilitychange,DOMContentLoaded,load",
+            ignoreMobileResize: true
+          });
+        }
+
+        // Crear timeline principal maestro
+        const mainTimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: "body",
+            start: "30% top", 
+            end: "250% bottom",
+            scrub: isIOS ? 0.5 : 1, // Scrub más suave en iOS
+            refreshPriority: -90,
+            anticipatePin: 1, // Ayuda con performance en móviles
+            fastScrollEnd: true, // Mejora momentum scrolling
+            onUpdate: (self: any) => {
+              // Controlar typing basado en el progreso del scroll
+              const progress = self.progress;
+
+              dreamCards.forEach((card, index) => {
+                const typingElement =
+                  card.element?.querySelector(".typing-text");
+                if (!typingElement) return;
+
+                const cardStart = (index * 30) / 210; // Normalizar a 0-1
+                const cardVisible = cardStart + 0.15; // Punto donde la tarjeta es visible
+                const cardExit = cardStart + 0.85; // Punto donde la tarjeta sale
+
+                const typingControls = typingAnimations.get(typingElement);
+                if (typingControls) {
+                  if (progress >= cardVisible && progress <= cardExit) {
+                    typingControls.start();
+                  } else {
+                    typingControls.stop();
+                  }
+                }
+              });
+            },
+          },
+        });
+
+        // Configurar posiciones iniciales de todas las tarjetas
+        dreamCards.forEach((card) => {
+          if (card.element) {
+            gsap.set(card.element, {
+              y: "100vh", // 100% de la altura de la pantalla hacia abajo
+              opacity: 0,
+            });
+          }
+        });
+
+        // Crear animaciones escalonadas para cada tarjeta usando GSAP
+        dreamCards.forEach((card, index) => {
+          if (!card.element) return;
+
+          // Timeline individual para cada tarjeta
+          const cardTl = gsap.timeline();
+
+          // FASE 1: Subir y aparecer (desde abajo de pantalla hasta centro)
+          cardTl
+            .fromTo(
+              card.element,
+              {
+                y: "100vh", // Empieza desde abajo de la pantalla
+                opacity: 0,
+              },
+              {
+                duration: 50, // 30% del scroll total
+                y: "0vh", // Llega al centro de la pantalla
+                opacity: 1,
+                ease: "none",
+              }
+            )
+            // FASE 2: Pausa visible en el centro
+            .to(card.element, {
+              duration: 150, // 40% del scroll total
+              // Se mantiene en la posición actual
+            })
+            // FASE 3: Subir hacia arriba y desaparecer (desde centro hasta arriba)
+            .to(card.element, {
+              duration: 150, // 30% del scroll total
+              y: "-100vh", // Sale por arriba de la pantalla
+              opacity: 0,
+              ease: "none",
+            });
+
+          // Agregar la animación de esta tarjeta al timeline principal
+          // Cada tarjeta empieza con 30% de delay (más escalonado)
+          const startTime = index * 30; // 30% de delay entre tarjetas (más lento)
+          mainTimeline.add(cardTl, startTime);
+        });
+      };
+
+      const loadGSAPAndSetup = async () => {
+        try {
+          // Intentar importar GSAP y ScrollTrigger
+          const gsap = await import("gsap");
+          const ScrollTriggerModule = await import("gsap/ScrollTrigger");
+
+          // Hacer disponibles globalmente
+          (window as any).gsap = gsap.gsap;
+          (window as any).ScrollTrigger = ScrollTriggerModule.ScrollTrigger;
+
+          // Registrar plugin
+          gsap.gsap.registerPlugin(ScrollTriggerModule.ScrollTrigger);
+
+          setupCardScrollSync();
+        } catch (error) {
+          console.log("GSAP no disponible para la tarjeta, usando fallback");
+          // Fallback simple basado en scroll
+          setupSimpleScrollSync();
+        }
+      };
+
+      const setupSimpleScrollSync = () => {
+        let ticking = false;
+
+        const updateOpacity = () => {
+          const scrollY = window.pageYOffset;
+          const windowHeight = window.innerHeight;
+          const documentHeight = document.documentElement.scrollHeight;
+          const progress = scrollY / (documentHeight - windowHeight);
+
+          dreamCards.forEach((card, index) => {
+            if (!card.element) return;
+
+            // Misma lógica escalonada que en ScrollTrigger
+            const cardDuration = 0.4;
+            const cardStart = index * 0.2;
+            const cardEnd = cardStart + cardDuration;
+
+            let cardProgress = (progress - cardStart) / cardDuration;
+            cardProgress = Math.max(0, Math.min(1, cardProgress));
+
+            let opacity = 0;
+            let translateY = 100;
+
+            if (cardProgress <= 0.3) {
+              const phase1Progress = cardProgress / 0.3;
+              opacity = phase1Progress;
+              translateY = 100 - phase1Progress * 100;
+            } else if (cardProgress <= 0.7) {
+              opacity = 1;
+              translateY = 0;
+            } else {
+              const phase3Progress = (cardProgress - 0.7) / 0.3;
+              opacity = 1 - phase3Progress;
+              translateY = -(phase3Progress * 100);
+            }
+
+            card.element.style.opacity = opacity.toString();
+            card.element.style.transform = `translateY(${translateY}vh)`;
+
+            // Controlar typing
+            const typingElement = card.element.querySelector(".typing-text");
+            const typingControls = typingAnimations.get(typingElement);
+            if (typingControls) {
+              if (cardProgress > 0.15 && cardProgress < 0.85) {
+                typingControls.start();
+              } else {
+                typingControls.stop();
+              }
+            }
+          });
+
+          ticking = false;
+        };
+        const onScroll = () => {
+          if (!ticking) {
+            requestAnimationFrame(updateOpacity);
+            ticking = true;
+          }
+        };
+
+        window.addEventListener("scroll", onScroll, { passive: true });
+      };
+
+      // Inicializar la animación de cards
+      initCardAnimation();
+    }
+
+    console.log("✅ Cards component initialized successfully");
+  } // Cierre de initCardsComponent
+
+  // === REGISTRO EN WEBGL MANAGER ===
+  if (typeof window !== "undefined") {
+    const registerComponent = () => {
+      if (window.WebGLManager) {
+        window.WebGLManager.registerComponent("cards", initCardsComponent);
+        console.log("🔗 Cards component registered with manager");
+
+        // Escuchar cuando WebGL esté listo para sincronización
+        window.WebGLManager.on("webgl:ready", () => {
+          console.log("🔄 WebGL ready, cards can synchronize");
+        });
+      } else {
+        setTimeout(registerComponent, 100);
+      }
+    };
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", registerComponent);
+    } else {
+      registerComponent();
+    }
+  }
+</script>

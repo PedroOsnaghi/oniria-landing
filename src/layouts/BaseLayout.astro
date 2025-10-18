@@ -19,8 +19,118 @@ const { title, description, url, image } = Astro.props;
   </head>
   <body class="min-h-screen relative text-white antialiased">
     <div class="starfield"></div>
-    <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+    <main class="relative z-10 w-full md:max-w-7xl mx-auto px-4 sm:px-6">
       <slot />
     </main>
+
+    <script>
+      // Declaraciones de tipos para este script
+      declare global {
+        interface Window {
+          WebGLManager: WebGLManagerInterface;
+        }
+      }
+
+      // Interface local para TypeScript
+      interface WebGLManagerInterface {
+        isInitialized: boolean;
+        components: Map<string, () => Promise<void> | void>;
+        eventBus: EventTarget;
+        registerComponent(
+          name: string,
+          initFunction: () => Promise<void> | void
+        ): void;
+        initComponent(name: string): Promise<void>;
+        initAll(): Promise<void>;
+        on(event: string, callback: (e: Event) => void): void;
+        emit(event: string, data?: any): void;
+      }
+
+      class WebGLManager implements WebGLManagerInterface {
+        public isInitialized: boolean = false;
+        public components: Map<string, () => Promise<void> | void> = new Map();
+        public eventBus: EventTarget = new EventTarget();
+
+        constructor() {
+          this.isInitialized = false;
+          this.components = new Map();
+          this.eventBus = new EventTarget();
+        }
+
+        // Registrar componente WebGL
+        registerComponent(
+          name: string,
+          initFunction: () => Promise<void> | void
+        ): void {
+          this.components.set(name, initFunction);
+          console.log(`✅ WebGL Component registered: ${name}`);
+
+          // Si ya estamos inicializados, ejecutar inmediatamente
+          if (this.isInitialized) {
+            this.initComponent(name);
+          }
+        }
+
+        // Inicializar un componente específico
+        async initComponent(name: string): Promise<void> {
+          const initFn = this.components.get(name);
+          if (initFn) {
+            try {
+              await initFn();
+              console.log(`🚀 Component initialized: ${name}`);
+
+              // Emitir evento para otros componentes
+              this.eventBus.dispatchEvent(new CustomEvent(`${name}:ready`));
+            } catch (error) {
+              console.error(`❌ Error initializing ${name}:`, error);
+            }
+          }
+        }
+
+        // Inicializar todos los componentes
+        async initAll(): Promise<void> {
+          if (this.isInitialized) return;
+
+          console.log("🔄 WebGL Manager: Initializing all components...");
+          this.isInitialized = true;
+
+          // Inicializar en orden específico
+          const initOrder: string[] = ["webgl", "cards", "particles"];
+
+          for (const componentName of initOrder) {
+            if (this.components.has(componentName)) {
+              await this.initComponent(componentName);
+              // Pequeño delay entre componentes
+              await new Promise<void>((resolve) => setTimeout(resolve, 100));
+            }
+          }
+
+          console.log("✅ All WebGL components initialized");
+        }
+
+        // Event bus para comunicación entre componentes
+        on(event: string, callback: (e: Event) => void): void {
+          this.eventBus.addEventListener(event, callback);
+        }
+
+        emit(event: string, data?: any): void {
+          this.eventBus.dispatchEvent(new CustomEvent(event, { detail: data }));
+        }
+      }
+
+      // Instancia global
+      window.WebGLManager = new WebGLManager();
+
+      // Inicializar cuando TODO esté listo
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", () => {
+          setTimeout(() => window.WebGLManager.initAll(), 500);
+        });
+      } else {
+        setTimeout(() => window.WebGLManager.initAll(), 500);
+      }
+
+      console.log("📦 WebGL Manager loaded");
+    </script>
   </body>
 </html>

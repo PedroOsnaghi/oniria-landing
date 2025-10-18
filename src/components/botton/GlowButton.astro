@@ -4,20 +4,23 @@ const { text = "Comenzá a soñar", href = "#" } = Astro.props;
 ---
 
 <a
-    href={href}
-    class="group relative inline-flex items-center justify-center px-10 py-3 rounded-2xl text-white font-inder text-[18px] font-medium
+  href={href}
+  class="group relative inline-flex items-center justify-center px-10 py-3 rounded-2xl text-white font-inder text-[18px] font-medium
          bg-gradient-to-r from-[#8B5CF6] via-[#C026D3] to-[#E879F9]
          shadow-[0_0_20px_rgba(216,70,239,0.3)]
          border border-fuchsia-400/60
          hover:shadow-[0_0_40px_rgba(216,70,239,0.5)]
          transition-all duration-300 ease-out"
 >
-    <span class="font-inder relative z-10">{text}</span>
-    <ArrowIcon
-        className="ml-3 text-[20px] group-hover:translate-x-1 transition-transform duration-300 text-rosaClaro"
-    />
-    <div
-        class="absolute inset-0 rounded-2xl border border-transparent bg-gradient-to-r from-fuchsia-500 to-violet-400 opacity-0 group-hover:opacity-100 blur-[3px] transition-opacity duration-300"
-    >
-    </div>
+  <span
+    class="font-inder relative z-10 group-hover:translate-x-3 transition-transform"
+    >{text}</span
+  >
+  <ArrowIcon
+    className="ml-3 text-[20px] group-hover:translate-x-1 transition-transform duration-300 text-rosaClaro"
+  />
+  <div
+    class="absolute inset-0 rounded-2xl border border-transparent bg-gradient-to-r from-fuchsia-500 to-violet-400 opacity-0 group-hover:opacity-100 blur-[3px] transition-opacity duration-300"
+  >
+  </div>
 </a>

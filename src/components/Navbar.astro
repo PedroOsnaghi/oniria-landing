@@ -11,17 +11,23 @@ import ArrowIcon from "../assets/icon/ArrowIcon.astro";
     href="https://fonts.googleapis.com/css2?family=Inder&family=Righteous&display=swap"
     rel="stylesheet"
   />
-  <a href="/" class="font-display text-xl font-extrabold">Oniria</a>
-  <nav class="flex items-center gap-3">
-    <a href="/login" class="font-inder text-sm text-neutral-300 hover:text-white"
-      >Iniciar sesión</a
-    >
-    <a
-      href="/signup"
-      class="font-inder text-sm px-4 py-2 rounded-xl border border-fuchsia-500/50 hover:bg-fuchsia-500/10"
-    >
-      Registrate
-      <ArrowIcon className="ml-2 relative top-[0px]" />
-    </a>
+  <nav class="flex items-center justify-between w-full mx-auto">
+    <a href="/" class="font-display text-xl font-extrabold">Oniria</a>
+    <div class="flex items-center gap-3">
+      <a
+        href="/login"
+        class="font-inder text-sm text-neutral-300 hover:text-white"
+        >Iniciar sesión</a
+      >
+      <a
+        href="/signup"
+        class="group font-inder text-sm px-4 py-2 rounded-xl border border-fuchsia-500/50 flex items-center justify-center hover:bg-fuchsia-500/10"
+      >
+        <span>Registrate</span>
+        <ArrowIcon
+          className="ml-3 text-[20px] group-hover:translate-x-1 transition-transform duration-300 text-rosaClaro"
+        />
+      </a>
+    </div>
   </nav>
 </header>
