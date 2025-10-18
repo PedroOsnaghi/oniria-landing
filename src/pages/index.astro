@@ -3,11 +3,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Navbar from "../components/Navbar.astro";
 import ConnectText from "../components/ConnectText.astro";
 import PricingSection from "../components/PricingSection.astro";
-import Hero from "../components/Hero.astro";
 import IntroSplit from "../components/IntroSplit.astro";
 import ExploreGrid from "../components/ExploreGrid.astro";
 import HowItWorks from "../components/HowItWorks.astro";
 import ImmersiveExperience from "../components/ImmersiveExperience.astro";
+import First from "../components/First.astro";
 
 const page = {
 	title: "Oniria — Tus sueños tienen algo que contarte",
@@ -19,7 +19,7 @@ const page = {
 
 <BaseLayout {...page}>
 	<Navbar />
-	<Hero client:load />
+	<First client:load />
 	<IntroSplit client:load />
 	<ConnectText />
 	<ExploreGrid client:load />
