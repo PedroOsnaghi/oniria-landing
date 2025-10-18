@@ -1,42 +1,44 @@
 ---
 const items = [
-    {
-        title: "Registrate e iniciá sesión",
-        img: "/images/flow-1.jpg",
-    },
-    {
-        title: "Describile tu sueño a la IA",
-        img: "/images/flow-2.jpg",
-    },
-    {
-        title: "Conocé el significado de tu sueño",
-        img: "/images/flow-3.jpg",
-    },
+  {
+    title: "Registrate e iniciá sesión",
+    img: "/images/flow-1.jpg",
+  },
+  {
+    title: "Describile tu sueño a la IA",
+    img: "/images/flow-2.jpg",
+  },
+  {
+    title: "Conocé el significado de tu sueño",
+    img: "/images/flow-3.jpg",
+  },
 ];
 ---
 
-<section class="mx-auto max-w-6xl px-4 sm:px-6 mt-30">
-    <h3 class="font-righteous text-[36px] text-grisclarotwo text-center">
-        ¿Cómo funciona Oniria?
-    </h3>
+<section
+  class="rounded-xl border border-white/12 bg-gray-700/[0.03] mt-8 backdrop-blur-md p-8 shadow-[0_8px_40px_rgba(0,0,0,.25)]"
+>
+  <h3 class="font-righteous text-[36px] text-grisclarotwo text-center">
+    ¿Cómo funciona Oniria?
+  </h3>
 
-    <div class="mt-8 grid md:grid-cols-3 gap-6 text-center">
-        {
-            items.map((it) => (
-                <article class="">
-                    <div class="rounded-2xl overflow-hidden border border-white/10 bg-black/30">
-                        <img
-                            src={it.img}
-                            alt={it.title}
-                            class="w-full h-40 md:h-44 object-cover opacity-95"
-                            loading="lazy"
-                        />
-                    </div>
-                    <h4 class="font-inder text-[16px] text-grisclarotwo text-center">
-                        {it.title}
-                    </h4>
-                </article>
-            ))
-        }
-    </div>
+  <div class="mt-8 grid md:grid-cols-3 gap-6 text-center">
+    {
+      items.map((it) => (
+        <article class="">
+          <div class="rounded-2xl overflow-hidden border border-white/10 bg-black/30">
+            <img
+              src={it.img}
+              alt={it.title}
+              class="w-full h-40 md:h-44 object-cover opacity-95"
+              loading="lazy"
+            />
+          </div>
+          <h4 class="font-inder text-[16px] text-grisclarotwo text-center">
+            {it.title}
+          </h4>
+        </article>
+      ))
+    }
+  </div>
 </section>

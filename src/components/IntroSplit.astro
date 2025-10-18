@@ -3,178 +3,160 @@
 ---
 
 <section
-  class="relative mx-auto max-w-6xl h-[170vh] items-end flex"
-  data-component="IntroSplit"
+  class="rounded-xl border border-white/12 bg-gray-700/[0.03] mt-3 backdrop-blur-md p-8 shadow-[0_8px_40px_rgba(0,0,0,.25)]"
 >
-  <div class="blur-2xl absolute top-98 left-44">
-    <svg xmlns="http://www.w3.org/2000/svg" width="434" height="427">
-      <defs>
-        <linearGradient id="bs4-a" x1="19.609%" x2="50%" y1="14.544%" y2="100%">
-          <stop offset="0%" stop-color="#A855F7"></stop>
-          <stop offset="100%" stop-color="#6366F1" stop-opacity="0"></stop>
-        </linearGradient>
-      </defs>
-      <path
-        fill="url(#bs4-a)"
-        fill-rule="evenodd"
-        d="m0 0 461 369-284 58z"
-        transform="matrix(1 0 0 -1 0 427)"></path>
-    </svg>
-  </div>
-  <!-- orbe a la derecha -->
   <div
-    class="pointer-events-none absolute right-[-80px] top-[-40px] w-[520px] h-[520px] rounded-full blur-3xl opacity-70"
-    style="background: radial-gradient(260px 260px at 60% 50%, rgba(216,70,239,.35), rgba(139,92,246,.2) 40%, rgba(0,0,0,0) 70%);"
+    class="relative mx-auto max-w-6xl flex justify-center"
+    data-component="IntroSplit"
   >
-  </div>
+    <div class="flex flex-col">
+      <div class="md:max-w-xl">
+        <p
+          class="font-inter text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-30% to-violet-300 text-[16px]"
+        >
+          Explorá tu subconsciente
+        </p>
+        <h2
+          class="font-righteous mt-2 text-[32px] text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-30% to-gray-200 font-display leading-tight tracking-tight"
+        >
+          ¿Alguna vez despertaste recordando un sueño y no supiste qué
+          significaba?
+        </h2>
+        <p
+          class="font-inter text-[18px] mt-3 text-neutral-300 font-display leading-tight tracking-tight"
+        >
+          Cada noche, tu mente te habla en formas de emociones, símbolos y
+          metáforas. Oniria te ayuda a traducir ese lenguaje interior.
+        </p>
+      </div>
 
-  <div class="flex flex-col gap-8">
-    <div class="md:max-w-xl">
-      <p
-        class="font-inter text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-30% to-violet-300 text-[16px]"
-      >
-        Explorá tu subconsciente
-      </p>
-      <h2
-        class="font-righteous mt-2 text-[32px] text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-30% to-gray-200 font-display leading-tight tracking-tight"
-      >
-        ¿Alguna vez despertaste recordando un sueño y no supiste qué
-        significaba?
-      </h2>
-      <p
-        class="font-inter text-[18px] mt-3 text-neutral-300 font-display leading-tight tracking-tight"
-      >
-        Cada noche, tu mente te habla en formas de emociones, símbolos y
-        metáforas. Oniria te ayuda a traducir ese lenguaje interior.
-      </p>
-    </div>
+      <div class="flex gap-3 mt-28" data-highlighter aria-live="polite">
+        <div class="card-slide" id="card-slide">
+          <div class="card">
+            <!-- Gradiente interactivo -->
+            <div class="card-gradient-dynamic"></div>
 
-    <div class="flex gap-3 mt-28" data-highlighter aria-live="polite">
-      <div class="card-slide" id="card-slide">
-        <div class="card">
-          <!-- Gradiente interactivo -->
-          <div class="card-gradient-dynamic"></div>
-
-          <!-- Partículas animadas -->
-          <div class="card-particles relative">
-            <canvas
-              class="absolute inset-0 z-10"
-              data-particle-animation
-              data-particle-quantity="3"></canvas>
-          </div>
-
-          <!-- Gradiente decorativo fijo -->
-          <div class="card-gradient" aria-hidden="true">
-            <div class="card-gradient-inner"></div>
-          </div>
-
-          <!-- Contenido principal -->
-          <div class="card-content">
-            <img
-              class="card-icon"
-              src="./images/carousel-icon-01.svg"
-              width="56"
-              height="56"
-              alt="Icon 01"
-            />
-            <div class="card-text">
-              <h3 class="card-title">Tus sueños son mensajes disfrazados.</h3>
-              <p class="card-description">
-                Oniria te ayuda a descifrarlos y a entender qué emociones los
-                originan.
-              </p>
+            <!-- Partículas animadas -->
+            <div class="card-particles relative">
+              <canvas
+                class="absolute inset-0 z-10"
+                data-particle-animation
+                data-particle-quantity="3"></canvas>
             </div>
-            <!-- <div class="card-action">
+
+            <!-- Gradiente decorativo fijo -->
+            <div class="card-gradient" aria-hidden="true">
+              <div class="card-gradient-inner"></div>
+            </div>
+
+            <!-- Contenido principal -->
+            <div class="card-content">
+              <img
+                class="card-icon"
+                src="./images/carousel-icon-01.svg"
+                width="56"
+                height="56"
+                alt="Icon 01"
+              />
+              <div class="card-text">
+                <h3 class="card-title">Tus sueños son mensajes disfrazados.</h3>
+                <p class="card-description">
+                  Oniria te ayuda a descifrarlos y a entender qué emociones los
+                  originan.
+                </p>
+              </div>
+              <!-- <div class="card-action">
               <a href="#0" class="card-link">
                 Learn More <span class="arrow">→</span>
               </a>
             </div> -->
+            </div>
           </div>
         </div>
-      </div>
-      <div class="card-slide" id="card-slide">
-        <div class="card">
-          <!-- Gradiente interactivo -->
-          <div class="card-gradient-dynamic"></div>
+        <div class="card-slide" id="card-slide">
+          <div class="card">
+            <!-- Gradiente interactivo -->
+            <div class="card-gradient-dynamic"></div>
 
-          <!-- Partículas animadas -->
-          <div class="card-particles relative">
-            <canvas
-              class="absolute inset-0 z-10"
-              data-particle-animation
-              data-particle-quantity="3"></canvas>
-          </div>
-
-          <!-- Gradiente decorativo fijo -->
-          <div class="card-gradient" aria-hidden="true">
-            <div class="card-gradient-inner"></div>
-          </div>
-
-          <!-- Contenido principal -->
-          <div class="card-content">
-            <img
-              class="card-icon"
-              src="./images/carousel-icon-03.svg"
-              width="56"
-              height="56"
-              alt="Icon 01"
-            />
-            <div class="card-text">
-              <h3 class="card-title">
-                Visualizá tu mente en movimiento contante.
-              </h3>
-              <p class="card-description">
-                Cada sueño se convierte en un mapa dinámico de nodos
-                interconectados.
-              </p>
+            <!-- Partículas animadas -->
+            <div class="card-particles relative">
+              <canvas
+                class="absolute inset-0 z-10"
+                data-particle-animation
+                data-particle-quantity="3"></canvas>
             </div>
-            <!-- <div class="card-action">
+
+            <!-- Gradiente decorativo fijo -->
+            <div class="card-gradient" aria-hidden="true">
+              <div class="card-gradient-inner"></div>
+            </div>
+
+            <!-- Contenido principal -->
+            <div class="card-content">
+              <img
+                class="card-icon"
+                src="./images/carousel-icon-03.svg"
+                width="56"
+                height="56"
+                alt="Icon 01"
+              />
+              <div class="card-text">
+                <h3 class="card-title">
+                  Visualizá tu mente en movimiento contante.
+                </h3>
+                <p class="card-description">
+                  Cada sueño se convierte en un mapa dinámico de nodos
+                  interconectados.
+                </p>
+              </div>
+              <!-- <div class="card-action">
               <a href="#0" class="card-link">
                 Learn More <span class="arrow">→</span>
               </a>
             </div> -->
+            </div>
           </div>
         </div>
-      </div>
-      <div class="card-slide" id="card-slide">
-        <div class="card">
-          <!-- Gradiente interactivo -->
-          <div class="card-gradient-dynamic"></div>
+        <div class="card-slide" id="card-slide">
+          <div class="card">
+            <!-- Gradiente interactivo -->
+            <div class="card-gradient-dynamic"></div>
 
-          <!-- Partículas animadas -->
-          <div class="card-particles relative">
-            <canvas
-              class="absolute inset-0 z-10"
-              data-particle-animation
-              data-particle-quantity="3"></canvas>
-          </div>
-
-          <!-- Gradiente decorativo fijo -->
-          <div class="card-gradient" aria-hidden="true">
-            <div class="card-gradient-inner"></div>
-          </div>
-
-          <!-- Contenido principal -->
-          <div class="card-content h-full">
-            <img
-              class="card-icon"
-              src="./images/carousel-icon-04.svg"
-              width="56"
-              height="56"
-              alt="Icon 04"
-            />
-            <div class="card-text hfull">
-              <h3 class="card-title">Tus sueños son mensajes disfrazados.</h3>
-              <p class="card-description">
-                Oniria te ayuda a descifrarlos y a entender qué emociones los
-                originan.
-              </p>
+            <!-- Partículas animadas -->
+            <div class="card-particles relative">
+              <canvas
+                class="absolute inset-0 z-10"
+                data-particle-animation
+                data-particle-quantity="3"></canvas>
             </div>
-            <!-- <div class="card-action">
+
+            <!-- Gradiente decorativo fijo -->
+            <div class="card-gradient" aria-hidden="true">
+              <div class="card-gradient-inner"></div>
+            </div>
+
+            <!-- Contenido principal -->
+            <div class="card-content h-full">
+              <img
+                class="card-icon"
+                src="./images/carousel-icon-04.svg"
+                width="56"
+                height="56"
+                alt="Icon 04"
+              />
+              <div class="card-text hfull">
+                <h3 class="card-title">Tus sueños son mensajes disfrazados.</h3>
+                <p class="card-description">
+                  Oniria te ayuda a descifrarlos y a entender qué emociones los
+                  originan.
+                </p>
+              </div>
+              <!-- <div class="card-action">
               <a href="#0" class="card-link">
                 Learn More <span class="arrow">→</span>
               </a>
             </div> -->
+            </div>
           </div>
         </div>
       </div>

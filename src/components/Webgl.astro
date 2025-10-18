@@ -9,13 +9,16 @@
 <script>
   import * as THREE from "three";
   import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
   import vertexShader from "../shaders/vertexShader.glsl";
   import fragmentShader from "../shaders/fragmentShader.glsl";
   import fragmentShaderMask from "../shaders/fragmentShaderMask.glsl";
 
-  // Registrar ScrollTrigger
-  gsap.registerPlugin(ScrollTrigger);
+  // Variables globales
+  let node: THREE.Group;
+  let camera: THREE.OrthographicCamera;
+  let renderer: THREE.WebGLRenderer;
+  let scene: THREE.Scene;
+  let material: THREE.ShaderMaterial;
 
   // Inicialización directa sin manager
   if (typeof window !== "undefined") {
@@ -25,12 +28,12 @@
         console.log("🎯 Iniciando WebGL component...");
 
         //scene setup
-        const scene = new THREE.Scene();
+        scene = new THREE.Scene();
 
         //Camera setup - ORTOGRÁFICA
         const frustumSize = 5;
         const aspect = window.innerWidth / window.innerHeight;
-        const camera = new THREE.OrthographicCamera(
+        camera = new THREE.OrthographicCamera(
           (frustumSize * aspect) / -2,
           (frustumSize * aspect) / 2,
           frustumSize / 2,
@@ -50,7 +53,7 @@
           return;
         }
 
-        const renderer = new THREE.WebGLRenderer({
+        renderer = new THREE.WebGLRenderer({
           canvas: canvas,
           alpha: true,
           antialias: true,
@@ -110,7 +113,7 @@
 
         //plane
         const geometry = new THREE.PlaneGeometry(5, 5, 1, 1);
-        const material = new THREE.ShaderMaterial({
+        material = new THREE.ShaderMaterial({
           uniforms: {
             ...Object.fromEntries(
               Object.entries(uniformDefaults).map(([key, value]) => [
@@ -138,7 +141,7 @@
         planeMask.position.set(0, 0, -0.2);
         plane.position.set(0, 0, 0.2);
 
-        const node = new THREE.Group();
+        node = new THREE.Group();
         node.add(planeMask);
         node.add(plane);
 
@@ -147,26 +150,9 @@
         floatingGroup.add(node);
         scene.add(floatingGroup);
 
-        // === ANIMACIÓN DE FLOTACIÓN CONSTANTE ===
-        gsap.to(floatingGroup.position, {
-          y: 0.1,
-          duration: 2.5,
-          ease: "sine.inOut",
-          repeat: -1,
-          yoyo: true,
-        });
-
-        gsap.to(floatingGroup.rotation, {
-          z: 0.015,
-          duration: 4,
-          ease: "sine.inOut",
-          repeat: -1,
-          yoyo: true,
-        });
-
         // === CONFIGURACIÓN RESPONSIVA ===
         const baseHeight = 800;
-        const baseScale = 2;
+        const baseScale = 2.8;
         const basePositionY = -2.9;
 
         function updateResponsiveLayout() {
@@ -179,146 +165,66 @@
 
         updateResponsiveLayout();
 
-        // === ANIMACIONES DE SCROLL ===
-        // Variables para scroll
-        let initialScale: number;
-        let initialPositionY: number;
+        // === ANIMACIÓN DE FLOTACIÓN SUAVE ===
+        // Flotación vertical suave
+        gsap.to(floatingGroup.position, {
+          y: 0.15,
+          duration: 3.5,
+          ease: "sine.inOut",
+          repeat: -1,
+          yoyo: true,
+        });
 
-        function updateScrollValues() {
-          const heightRatio = window.innerHeight / baseHeight;
-          initialScale = baseScale * heightRatio * 0.7;
-          initialPositionY = basePositionY / heightRatio;
-        }
+        // Rotación sutil en Z
+        gsap.to(floatingGroup.rotation, {
+          z: 0.02,
+          duration: 4.5,
+          ease: "sine.inOut",
+          repeat: -1,
+          yoyo: true,
+        });
 
-        function setupScrollAnimations() {
-          updateScrollValues();
+        // Escala muy sutil para efecto de "respiración"
+        gsap.to(floatingGroup.scale, {
+          x: 1.03,
+          y: 1.03,
+          z: 1.03,
+          duration: 2.8,
+          ease: "sine.inOut",
+          repeat: -1,
+          yoyo: true,
+        });
 
-          const scrollTimeline = gsap.timeline({
-            scrollTrigger: {
-              trigger: "body",
-              start: "top top",
-              end: "350% bottom", // Extendido para acomodar la fase 3
-              scrub: 0,
-              anticipatePin: 1,
-              fastScrollEnd: true,
-              onUpdate: (self: any) => {
-                console.log("ScrollTrigger progress:", self.progress);
-                renderer.render(scene, camera);
-              },
-              onToggle: (self: any) => {
-                console.log("ScrollTrigger toggle:", self.isActive);
-              },
-            },
-          });
-
-          // FASE 1: Mover hacia el centro
-          scrollTimeline.fromTo(
-            node.position,
-            {
-              x: 0,
-              y: initialPositionY,
-              z: 0,
-            },
-            {
-              y: 0,
-              duration: 150,
-              ease: "power2.inOut",
-              onStart: () => console.log("FASE 1: Movimiento hacia el centro"),
-              onComplete: () =>
-                console.log("FASE 1: Completado - nodo en el centro"),
-            },
-            0
-          );
-
-          // FASE 2: Mover a la derecha
-          scrollTimeline.to(
-            node.position,
-            {
-              x: 1.8,
-              duration: 55,
-              ease: "power2.out",
-              onStart: () => console.log("FASE 2: Movimiento a la derecha"),
-              onComplete: () =>
-                console.log("FASE 2: Completado movimiento final"),
-            },
-            210
-          );
-
-          // FASE 3: Mover hacia arriba (sincronizado con IntroSplit)
-          scrollTimeline.to(
-            node.position,
-            {
-              y: 5, // Mover hacia arriba (valor positivo = arriba)
-              duration: 150, // Duración de la fase 3
-              ease: "power2.inOut",
-              onStart: () =>
-                console.log("FASE 3: Movimiento hacia arriba iniciado"),
-              onComplete: () => console.log("FASE 3: Completado - nodo arriba"),
-            },
-            380 // Empieza en el tiempo 100 (después de fase 2)
-          );
-
-          // ESCALA: Durante todo el proceso (incluyendo fase 3)
-          scrollTimeline.fromTo(
-            node.scale,
-            {
-              x: initialScale,
-              y: initialScale,
-              z: initialScale,
-            },
-            {
-              x: 1.5,
-              y: 1.5,
-              z: 1.5,
-              duration: 140, // Extendido para cubrir todas las fases (era 100)
-              ease: "power2.inOut",
-              onStart: () => console.log("Iniciando cambio de escala global"),
-              onComplete: () =>
-                console.log("Completado cambio de escala global"),
-            },
-            0
-          );
-        }
-
-        // Configurar scroll después de un delay
-        setTimeout(() => {
-          setupScrollAnimations();
-          console.log("✅ Scroll animations configured");
-        }, 500);
-
-        // Clock y animación
+        // === LOOP DE ANIMACIÓN (SOLO uTime) ===
         const clock = new THREE.Clock();
 
         function animate() {
           requestAnimationFrame(animate);
           const delta = clock.getDelta();
+
+          // Actualizar solo el tiempo del shader
           material.uniforms.uTime.value += delta;
+
+          // Renderizar la escena
           renderer.render(scene, camera);
         }
 
         animate();
 
-        // // Resize handler
+        // === RESIZE HANDLER ===
         function onWindowResize() {
-          const newWidth = Math.min(
-            window.innerWidth,
-            document.documentElement.clientWidth
-          );
-          const newHeight = Math.min(
-            window.innerHeight,
-            document.documentElement.clientHeight
-          );
-
-          const newAspect = newWidth / newHeight;
-          camera.left = (frustumSize * newAspect) / -2;
-          camera.right = (frustumSize * newAspect) / 2;
+          const aspect = window.innerWidth / window.innerHeight;
+          camera.left = (frustumSize * aspect) / -2;
+          camera.right = (frustumSize * aspect) / 2;
           camera.updateProjectionMatrix();
 
-          renderer.setSize(newWidth, newHeight);
-          material.uniforms.uResolution.value = [newWidth, newHeight];
+          renderer.setSize(window.innerWidth, window.innerHeight);
+          material.uniforms.uResolution.value = [
+            window.innerWidth,
+            window.innerHeight,
+          ];
 
           updateResponsiveLayout();
-          updateScrollValues();
         }
 
         window.addEventListener("resize", onWindowResize);

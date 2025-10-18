@@ -14,8 +14,6 @@ interface WebGLManagerInterface {
 declare global {
     interface Window {
         WebGLManager: WebGLManagerInterface;
-        gsap?: any;
-        ScrollTrigger?: any;
     }
 }
 
