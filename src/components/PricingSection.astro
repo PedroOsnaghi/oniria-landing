@@ -1,0 +1,303 @@
+---
+import ArrowIcon from "../assets/icon/ArrowIcon.astro";
+import CheckIcon from "../assets/icon/CheckIcon.astro";
+---
+
+<section class="mx-auto max-w-6xl px-4 sm:px-6 mt-30">
+    <!-- Título -->
+    <h2
+        class="text-center font-righteous text-[36px] text-grisclarotwo font-display"
+    >
+        Convertí tus sueños en una experiencia sin límites
+    </h2>
+
+    <h4
+        class="text-center font-inder text-[16px] text-grisclarotwo font-display"
+    >
+        ¿Listo para ir más allá? Dejá atrás los límites semanales y los análisis
+        básicos. Con Plus, obtenés interpretaciones ilimitadas, una IA que
+        analiza tus patrones personales y acceso a contenido exclusivo. La
+        experiencia completa te espera.
+    </h4>
+
+    <!-- Toggle Mensual / Anual -->
+    <div class="mt-8 grid md:grid-cols-[1fr_2fr] gap-8 items-center">
+        <!-- Columna izquierda: toggle + lista de features -->
+        <div class="self-center">
+            <div
+                class="flex items-center gap-3 md:justify-start justify-center md:ml-10"
+            >
+                <span class="font-inder text-sm text-white" id="lbl-monthly"
+                    >Mensual</span
+                >
+
+                <button
+                    id="billing-toggle"
+                    class="relative w-16 h-8 rounded-full bg-neutral-700 p-1 flex items-center transition outline-none focus:ring-2 focus:ring-fuchsia-500/60"
+                >
+                    <div
+                        id="toggle-bg"
+                        class="absolute inset-0 rounded-full transition"
+                    >
+                    </div>
+                    <div
+                        id="toggle-knob"
+                        class="relative w-6 h-6 rounded-full bg-white transform transition translate-x-0"
+                    >
+                    </div>
+                </button>
+
+                <span class="font-indertext-sm" id="lbl-yearly">
+                    Anual <span class="text-green-400">(-20%)</span>
+                </span>
+            </div>
+
+            <hr class="mt-6 border-white/10" />
+
+            <!-- Categorías / features -->
+            <div class="mt-6 space-y-6 text-sm">
+                <div>
+                    <h3 class="font-inder text-neutral-100 font-semibold mb-2">
+                        Experiencia
+                    </h3>
+                    <ul class="text-neutral-300 space-y-2">
+                        <li
+                            class="font-inder flex items-center justify-between border-b border-white/10 pb-2"
+                        >
+                            Interpretaciones
+                        </li>
+                        <li
+                            class="font-inder flex items-center justify-between border-b border-white/10 pb-2"
+                        >
+                            Habitación 3D interactivas
+                        </li>
+                        <li
+                            class="font-inder flex items-center justify-between"
+                        >
+                            Exploración simbólica de tus sueños
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-inder text-neutral-100 font-semibold mb-2">
+                        Funcionalidades
+                    </h3>
+                    <ul class="text-neutral-300 space-y-2">
+                        <li
+                            class="font-inderflex items-center justify-between border-b border-white/10 pb-2"
+                        >
+                            Guardá tus sueños en el Mapa Onírico
+                        </li>
+                        <li
+                            class="font-inder flex items-center justify-between border-b border-white/10 pb-2"
+                        >
+                            Acceso a estadísticas y evolución emocional
+                        </li>
+                        <li
+                            class="font-inder flex items-center justify-between border-b border-white/10 pb-2"
+                        >
+                            IA personalizada según tus patrones de sueños
+                        </li>
+                        <li
+                            class="font-inder flex items-center justify-between"
+                        >
+                            Conectá con otras almas soñadoras
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-inder text-neutral-100 font-semibold mb-2">
+                        Soporte
+                    </h3>
+                    <ul class="text-neutral-300 space-y-2">
+                        <li
+                            class="font-inder flex items-center justify-between border-b border-white/10 pb-2"
+                        >
+                            Nuevos cosméticos
+                        </li>
+                        <li
+                            class="font-inder flex items-center justify-between"
+                        >
+                            Nuevos escenarios
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Columna derecha: tarjetas de planes -->
+        <div
+            class="rounded-3xl border border-white/12 overflow-hidden mb-20 self-center"
+        >
+            <div class="grid md:grid-cols-2">
+                <!-- FREE -->
+                <article
+                    class="p-6 md:p-8 bg-white/[0.02] flex flex-col justify-center"
+                >
+                    <h4 class="font-righteous text-fuchsia-300">Free</h4>
+
+                    <div class="mt-3">
+                        <div class="flex items-end gap-1 leading-none">
+                            <span class="text-4xl font-extrabold text-white"
+                                >$<span id="price-free">0</span></span
+                            >
+                            <span
+                                class="font-inder text-neutral-400 text-sm mb-1"
+                                >/mes</span
+                            >
+                        </div>
+                        <p class="font-inder text-neutral-400 text-sm mt-2">
+                            Comenzá tu viaje onírico hoy.
+                        </p>
+                    </div>
+
+                    <a
+                        href="#"
+                        class="font-inder mt-5 inline-flex w-full items-center justify-center rounded-full px-4 py-2 text-sm bg-white/10 text-white hover:bg-white/20 transition"
+                    >
+                        Obtener <ArrowIcon
+                            className="ml-3 text-[20px] group-hover:translate-x-1 transition-transform duration-300 text-rosaClaro"
+                        />
+                    </a>
+
+                    <hr class="my-5 border-white/10" />
+
+                    <ul class="text-neutral-300 text-sm space-y-3">
+                        <li class="font-inder flex items-center gap-2">
+                            <CheckIcon /> 4 por semana
+                        </li>
+                        <li class="font-inder flex items-center gap-2">
+                            <CheckIcon /> Disponible
+                        </li>
+                        <li class="font-inder flex items-center gap-2">
+                            <CheckIcon /> Básica
+                        </li>
+                        <li class="font-inder flex items-center gap-2">
+                            <CheckIcon /> Disponible
+                        </li>
+                        <li class="font-inder flex items-center gap-2">
+                            <CheckIcon /> Básico
+                        </li>
+                        <li class="font-inder flex items-center gap-2">
+                            No disponible
+                        </li>
+                        <li class="font-inder flex items-center gap-2">
+                            No disponible
+                        </li>
+                        <li class="font-inder flex items-center gap-2">
+                            <CheckIcon /> Básica
+                        </li>
+                        <li class="font-inder flex items-center gap-2">
+                            <CheckIcon /> Básica
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- PLUS -->
+                <article
+                    class="p-6 md:p-8 border-l border-white/12 relative flex flex-col justify-center"
+                >
+                    <div
+                        class="absolute inset-0 pointer-events-none rounded-none md:rounded-tr-3xl md:rounded-br-3xl ring-1 ring-fuchsia-500/40"
+                    >
+                    </div>
+
+                    <h4 class="font-righteous text-fuchsia-300">Plus</h4>
+
+                    <div class="mt-3">
+                        <div class="flex items-end gap-1 leading-none">
+                            <span
+                                class="font-inder text-4xl font-extrabold text-white"
+                                >$<span id="price-plus">49</span></span
+                            >
+                            <span
+                                class="font-inder text-neutral-400 text-sm mb-1"
+                                >/mes</span
+                            >
+                        </div>
+                        <p class="font-inder text-neutral-400 text-sm mt-2">
+                            Explorá tus sueños sin límites.
+                        </p>
+                    </div>
+
+                    <a
+                        href="#"
+                        class="font-inder mt-5 inline-flex w-full items-center justify-center rounded-full px-4 py-2 text-sm text-white bg-gradient-to-r from-fuchsia-500 to-violet-500 hover:opacity-95 transition shadow-[0_0_40px_10px_rgba(216,70,239,.25)]"
+                    >
+                        Obtener <ArrowIcon
+                            className="ml-3 text-[20px] group-hover:translate-x-1 transition-transform duration-300 text-rosaClaro"
+                        />
+                    </a>
+
+                    <hr class="my-5 border-white/10" />
+
+                    <ul class="text-neutral-300 text-sm space-y-3">
+                        <li class="font-inder flex items-center gap-2">
+                            <CheckIcon /> Ilimitadas
+                        </li>
+                        <li class="font-inder flex items-center gap-2">
+                            <CheckIcon /> Disponible
+                        </li>
+                        <li class="font-inder flex items-center gap-2">
+                            <CheckIcon /> Análisis profundo
+                        </li>
+                        <li class="font-inder flex items-center gap-2">
+                            <CheckIcon /> Disponible
+                        </li>
+                        <li class="font-inder flex items-center gap-2">
+                            <CheckIcon /> Análisis detallado
+                        </li>
+                        <li class="font-inder flex items-center gap-2">
+                            <CheckIcon /> Análisis según patrones
+                        </li>
+                        <li class="font-inder flex items-center gap-2">
+                            <CheckIcon /> Acceso a la comunidad
+                        </li>
+                        <li class="font-inder flex items-center gap-2">
+                            <CheckIcon /> Acceso a nuevos estilos visuales
+                        </li>
+                        <li class="font-inder flex items-center gap-2">
+                            <CheckIcon />
+                            Actualizaciones exclusivas
+                        </li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Script mínimo para alternar mensual/anual (-20%) -->
+<script is:inline>
+    const toggle = document.getElementById("billing-toggle");
+    const knob = document.getElementById("toggle-knob");
+    const bg = document.getElementById("toggle-bg");
+    const pricePlus = document.getElementById("price-plus");
+    const priceFree = document.getElementById("price-free");
+    const lblMonthly = document.getElementById("lbl-monthly");
+    const lblYearly = document.getElementById("lbl-yearly");
+
+    let yearly = false;
+    const updateUI = () => {
+        knob.classList.toggle("translate-x-8", yearly);
+        bg.className =
+            "absolute inset-0 rounded-full transition " +
+            (yearly ? "bg-gradient-to-r from-fuchsia-500 to-violet-500" : "");
+        lblMonthly.className =
+            "text-sm " + (yearly ? "text-neutral-400" : "text-white");
+        lblYearly.className =
+            "text-sm " + (yearly ? "text-white" : "text-neutral-400");
+        // precios
+        priceFree.textContent = "0";
+        pricePlus.textContent = yearly ? "39" : "49"; // 20% OFF anual
+    };
+
+    toggle?.addEventListener("click", () => {
+        yearly = !yearly;
+        updateUI();
+    });
+
+    updateUI();
+</script>

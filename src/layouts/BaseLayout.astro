@@ -1,0 +1,26 @@
+---
+import SEO from "../components/SEO.astro";
+import "../styles/global.css";
+const { title, description, url, image } = Astro.props;
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inder&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+
+    <SEO {title} {description} {url} {image} />
+  </head>
+  <body class="min-h-screen relative text-white antialiased">
+    <div class="starfield"></div>
+    <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+      <slot />
+    </main>
+  </body>
+</html>

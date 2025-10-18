@@ -1,0 +1,60 @@
+---
+import ArrowIcon from "../assets/icon/ArrowIcon.astro";
+
+
+---
+
+<section class="mx-auto max-w-6xl px-4 sm:px-6 mt-20">
+    <div
+        class="relative rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-[0_8px_40px_rgba(0,0,0,.35)] overflow-hidden"
+    >
+        <!-- Fondo degradado y grid sutil -->
+        <div
+            class="absolute inset-0 opacity-70"
+            style="background: radial-gradient(900px 600px at 80% 50%, rgba(216,70,239,.25), rgba(0,0,0,0) 70%);"
+        >
+        </div>
+
+        <div
+            class="absolute inset-0 opacity-25"
+            style="background:
+        linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px) 0 0 / 28px 28px,
+        linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px) 0 0 / 28px 28px;"
+        >
+        </div>
+
+        <!-- Contenido principal -->
+        <div
+            class="relative z-10 grid md:grid-cols-2 items-center gap-8 p-8 md:p-10"
+        >
+            <!-- Texto -->
+            <div class="text-left">
+                <h3 class="font-righteous text-[20px] text-grisclarotwo">
+                    Viví una experiencia inmersiva
+                </h3>
+                <p class="font-inder text-[16px] text-grisclarotwo">
+                    Sumergite en un universo 3D diseñado para que descubras tu
+                    propio espacio de manera interactiva y visual.
+                </p>
+                <a
+                    href="#cta"
+                    class="inline-flex items-center px-5 py-2 mt-6 rounded-xl border border-fuchsia-500/50 text-sm text-fuchsia-400 hover:bg-fuchsia-500/10 transition-all duration-300"
+                >
+                    Ver más <ArrowIcon
+                        className="ml-3 text-[20px] group-hover:translate-x-1 transition-transform duration-300 text-rosaClaro"
+                    />
+                </a>
+            </div>
+
+            <!-- Imagen 3D -->
+            <div class="relative">
+                <img
+                    src="/images/room-3d.jpg"
+                    alt="Habitación 3D Oniria"
+                    class="rounded-2xl w-full h-auto shadow-[0_20px_60px_rgba(216,70,239,.25)]"
+                    loading="lazy"
+                />
+            </div>
+        </div>
+    </div>
+</section>

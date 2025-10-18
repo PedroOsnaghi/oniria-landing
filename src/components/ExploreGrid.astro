@@ -1,0 +1,181 @@
+---
+import ArrowIcon from "../assets/icon/ArrowIcon.astro";
+
+/* No props por ahora. Si querés, podemos parametrizar textos/imágenes. */
+const ghostCards = Array.from({ length: 7 });
+---
+
+<section class="mx-auto max-w-6xl px-4 sm:px-6 mt-69">
+    <!-- Título -->
+    <h3
+        class="font-righteous text-center text-[36px] text-grisclarotwo font-display"
+    >
+        Explorá tu mundo interior desde todos los
+        <span
+            class="underline decoration-fuchsia-500/70 decoration-4 underline-offset-4"
+            >ángulos</span
+        >
+    </h3>
+    <p
+        class="mt-2 text-center font-inder text-center text-[14px] text-grisclarotwo mx-auto"
+    >
+        Cada interpretación se convierte en nodos conectados que forman una red,
+        revelando patrones y relaciones ocultas que te permiten tener un
+        panorama completo de tus sueños.
+    </p>
+
+    <!-- Panel grande -->
+    <section
+        class="relative rounded-3xl border border-white/10 bg-gradient-to-br from-[#1b0f2a] via-[#10061A] to-[#06050b] backdrop-blur-md shadow-[0_8px_40px_rgba(0,0,0,.35)] p-8 overflow-hidden"
+    >
+        <!-- grid y fondo violeta -->
+        <div class="absolute inset-0">
+            <div
+                class="absolute inset-0 opacity-40 bg-[radial-gradient(100%_80%_at_60%_40%,rgba(216,70,239,.22),rgba(0,0,0,0))]"
+            >
+            </div>
+            <div
+                class="absolute inset-0 opacity-25"
+                style="background:
+        linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px) 0 0 / 40px 40px,
+        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px) 0 0 / 40px 40px;"
+            >
+            </div>
+        </div>
+
+        <!-- contenido -->
+        <div class="relative grid md:grid-cols-2 gap-10 items-center z-10">
+            <!-- texto -->
+            <div class="max-w-md">
+                <h3
+                    class="font-righteous text-[24px] leading-tight text-white mb-3"
+                >
+                    Explorá tu mente a través de <span class="text-fuchsia-400"
+                        >tus sueños</span
+                    >
+                </h3>
+                <p
+                    class="font-inder text-[16px] text-grisclarotwo leading-relaxed"
+                >
+                    Oniria transforma tus relatos en un mapa visual de emociones
+                    y símbolos. Cada palabra y cada emoción que registrás se
+                    traduce en conexiones que conforman tu estructura emocional.
+                </p>
+
+                <a
+                    href="#cta"
+                    class="inline-flex items-center gap-2 mt-6 px-5 py-2.5 rounded-xl border border-rosaClaro/50 text-rosaClaro font-inder text-[15px] hover:bg-rosaClaro/10 transition-all duration-300"
+                >
+                    Ver más <ArrowIcon
+                        className="ml-3 text-[20px] group-hover:translate-x-1 transition-transform duration-300 text-rosaClaro"
+                    />
+                </a>
+            </div>
+
+            <!-- conexiones visuales -->
+            <!--  <div
+                class="relative h-[280px] w-full flex items-center justify-center"
+            >
+                <svg
+                    viewBox="0 0 400 280"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="absolute inset-0 opacity-30"
+                >
+                    <path
+                        d="M80 50 C150 100, 250 60, 320 120"
+                        stroke="rgba(231,133,255,0.4)"
+                        stroke-width="2"></path>
+                    <path
+                        d="M80 130 C160 170, 240 150, 320 210"
+                        stroke="rgba(231,133,255,0.3)"
+                        stroke-width="2"></path>
+                    <path
+                        d="M80 200 C140 220, 260 240, 330 260"
+                        stroke="rgba(231,133,255,0.2)"
+                        stroke-width="2"></path>
+                </svg>
+
+                <div class="absolute grid grid-cols-2 gap-5 md:gap-7">
+                    {
+                        Array.from({ length: 6 }).map((_, i) => (
+                            <div
+                                class="w-[130px] h-[42px] md:w-[150px] md:h-[50px] rounded-xl bg-black/40 border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:bg-fuchsia-500/10 transition-all duration-300"
+                                style={`transform: translateY(${(i % 2) * 10}px) rotate(${i % 2 ? "-4" : "4"}deg);`}
+                            />
+                        ))
+                    }
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- fila: Estadísticas + IA -->
+    <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <!-- Estadísticas -->
+        <div
+            class="rounded-3xl border border-white/12 bg-white/[0.03] backdrop-blur-md p-6 md:p-7 shadow-[0_8px_40px_rgba(0,0,0,.35)]"
+        >
+            <h5 class="font-righteous text-[20px] text-grisclarotwo">
+                Estadísticas
+            </h5>
+
+            <div class="mt-5 h-[160px] rounded-2xl relative overflow-hidden">
+                <!-- mini chart placeholder -->
+                <div
+                    class="absolute inset-0"
+                    style="background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0));"
+                >
+                </div>
+                <svg
+                    viewBox="0 0 320 160"
+                    class="absolute inset-0 w-full h-full"
+                >
+                    <defs>
+                        <linearGradient id="area" x1="0" x2="0" y1="0" y2="1">
+                            <stop offset="0%" stop-color="rgba(216,70,239,.45)"
+                            ></stop>
+                            <stop offset="100%" stop-color="rgba(216,70,239,0)"
+                            ></stop>
+                        </linearGradient>
+                    </defs>
+                    <path
+                        d="M0 120 L40 98 L80 110 L120 80 L160 92 L200 62 L240 78 L280 56 L320 68"
+                        fill="none"
+                        stroke="rgba(216,70,239,.9)"
+                        stroke-width="3"></path>
+                    <path
+                        d="M0 120 L40 98 L80 110 L120 80 L160 92 L200 62 L240 78 L280 56 L320 68 L320 160 L0 160 Z"
+                        fill="url(#area)"></path>
+                </svg>
+            </div>
+        </div>
+
+        <!-- IA -->
+        <div
+            class="rounded-3xl border border-white/12 bg-white/[0.03] backdrop-blur-md p-6 md:p-7 shadow-[0_8px_40px_rgba(0,0,0,.35)]"
+        >
+            <h5 class="font-righteous text-[20px] text-grisclarotwo">
+                Potenciado por IA
+            </h5>
+            <p class="font-inder text-[16px] text-grisclarotwo">
+                La inteligencia artificial analiza tus sueños y transforma cada
+                relato en el espejo de tu subconsciente.
+            </p>
+            <div class="mt-6 grid place-items-center">
+                <div class="relative">
+                    <div
+                        class="absolute -inset-10 blur-2xl opacity-60"
+                        style="background: radial-gradient(120px 120px at 50% 50%, rgba(216,70,239,.35), rgba(0,0,0,0));"
+                    >
+                    </div>
+                    <div
+                        class="h-20 w-20 rounded-full bg-gradient-to-b from-fuchsia-500 to-violet-500 text-white font-bold grid place-items-center shadow-glow"
+                    >
+                        IA
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
