@@ -25,10 +25,16 @@ const { title, description, url, image } = Astro.props;
     </main>
 
     <script>
+      // Importar Lenis y GSAP
+      import Lenis from "lenis";
+      import { gsap } from "gsap";
+
       // Declaraciones de tipos para este script
       declare global {
         interface Window {
           WebGLManager: WebGLManagerInterface;
+          lenis: any;
+          gsap: any;
         }
       }
 
@@ -131,7 +137,38 @@ const { title, description, url, image } = Astro.props;
         setTimeout(() => window.WebGLManager.initAll(), 500);
       }
 
-      console.log("📦 WebGL Manager loaded");
+      // === INICIALIZACIÓN DE LENIS + GSAP ===
+      console.log("🚀 Iniciando Lenis + GSAP...");
+
+      // Configurar Lenis con parámetros más suaves
+      window.lenis = new Lenis({
+        duration: 2.0, // Más lento y suave (era 1.2)
+        easing: (t) => 1 - Math.pow(1 - t, 3), // Cubic out más suave
+        touchMultiplier: 1.5, // Menos sensible al touch (era 2)
+        wheelMultiplier: 0.8, // Menos sensible al wheel
+        infinite: false,
+        smoothWheel: true, // Suavizar wheel
+      });
+
+      // Agregar debug para verificar que funciona
+      window.lenis.on("scroll", (e: any) => {
+        if (Math.round(e.progress * 100) % 20 === 0) {
+          console.log(`🎯 Lenis scroll: ${Math.round(e.progress * 100)}%`);
+        }
+      });
+
+      // Loop principal de animación (reemplaza GSAP ticker)
+      function raf(time: number) {
+        window.lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+
+      // Hacer GSAP disponible globalmente
+      window.gsap = gsap;
+
+      console.log("✅ Lenis + GSAP configurados");
+      console.log("� WebGL Manager + Lenis + GSAP loaded");
     </script>
   </body>
 </html>

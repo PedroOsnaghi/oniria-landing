@@ -10,16 +10,17 @@ const ghostCards = Array.from({ length: 7 });
 >
   <!-- Título -->
   <h3
-    class="font-righteous text-center text-[36px] text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-30% to-gray-200 font-display"
+    class="block text-center font-righteous mt-2 text-2xl md:text-[32px] text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-30% to-gray-200 font-display leading-tight tracking-tight"
   >
-    Explorá tu mundo interior desde todos los
+    Explorá tu
     <span
-      class="underline decoration-fuchsia-500/70 decoration-4 underline-offset-4"
-      >ángulos</span
+      class="inline items-baselinefont-righteous mt-2 text-2xl md:text-[32px] text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-300 from-20% to-violet-400"
+      >mundo interior</span
     >
+    desde todos los ángulos
   </h3>
   <p
-    class="mt-2 text-center font-inder text-center text-[14px] text-grisclarotwo mx-auto"
+    class="mt-2 font-inder text-center text-[18px] text-grisclarotwo mx-auto mb-14"
   >
     Cada interpretación se convierte en nodos conectados que forman una red,
     revelando patrones y relaciones ocultas que te permiten tener un panorama
@@ -27,225 +28,231 @@ const ghostCards = Array.from({ length: 7 });
   </p>
 
   <!-- Panel grande -->
-  <section
-    class="relative rounded-3xl border border-white/10 bg-gradient-to-br from-[#1b0f2a] via-[#10061A] to-[#06050b] backdrop-blur-md shadow-[0_8px_40px_rgba(0,0,0,.35)] p-8 overflow-hidden"
-  >
-    <!-- grid y fondo violeta -->
-    <div class="absolute inset-0">
-      <div
-        class="absolute inset-0 opacity-40 bg-[radial-gradient(100%_80%_at_60%_40%,rgba(216,70,239,.22),rgba(0,0,0,0))]"
-      >
-      </div>
-      <div
-        class="absolute inset-0 opacity-25"
-        style="background:
+  <section>
+    <div
+      data-highlighter
+      aria-live="polite"
+      class="relative rounded-3xl border border-white/10 bg-gradient-to-br from-[#1b0f2a] via-[#10061A] to-[#06050b] backdrop-blur-md shadow-[0_8px_40px_rgba(0,0,0,.35)] p-8 overflow-hidden"
+    >
+      <!-- grid y fondo violeta -->
+      <div class="absolute inset-0">
+        <div
+          class="absolute inset-0 opacity-40 bg-[radial-gradient(100%_80%_at_60%_40%,rgba(216,70,239,.22),rgba(0,0,0,0))]"
+        >
+        </div>
+        <div
+          class="absolute inset-0 opacity-25"
+          style="background:
         linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px) 0 0 / 40px 40px,
         linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px) 0 0 / 40px 40px;"
-      >
-      </div>
-    </div>
-
-    <!-- contenido -->
-    <div class="relative grid md:grid-cols-2 gap-10 items-center z-10">
-      <!-- texto -->
-      <div class="max-w-md">
-        <h3 class="font-righteous text-[24px] text-transparent bg-clip-text bg-clip-text bg-gradient-to-r from-gray-600 to-80% to-gray-200 leading-tight text-white mb-3">
-          Explorá tu mente a través de <span class="text-fuchsia-400"
-            >tus sueños</span
-          >
-        </h3>
-        <p class="font-inder text-[16px] text-grisclarotwo leading-relaxed">
-          Oniria transforma tus relatos en un mapa visual de emociones y
-          símbolos. Cada palabra y cada emoción que registrás se traduce en
-          conexiones que conforman tu estructura emocional.
-        </p>
-
-        <a
-          href="https://oniria3d.com.ar"
-          class="inline-flex items-center gap-2 mt-6 px-5 py-2.5 rounded-xl border border-rosaClaro/50 text-rosaClaro font-inder text-[15px] hover:bg-rosaClaro/10 transition-all duration-300"
         >
-          Ver más <ArrowIcon
-            className="ml-3 text-[20px] group-hover:translate-x-1 transition-transform duration-300 text-rosaClaro"
-          />
-        </a>
+        </div>
       </div>
 
-      <svg
-        width="531"
-        height="364"
-        viewBox="0 0 531 364"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <rect
-          y="38.2565"
-          width="155"
-          height="54"
-          rx="12"
-          transform="rotate(-13.908 0 38.2565)"
-          fill="#0A0A0A"
-          fill-opacity="0.58"></rect>
-        <rect
-          x="0.605524"
-          y="38.6216"
-          width="154"
-          height="53"
-          rx="11.5"
-          transform="rotate(-13.908 0.605524 38.6216)"
-          stroke="url(#paint0_linear_567_237)"
-          stroke-opacity="0.83"></rect>
-        <rect
-          x="37.6055"
-          y="168.622"
-          width="154"
-          height="53"
-          rx="11.5"
-          transform="rotate(-13.908 37.6055 168.622)"
-          fill="#0A0A0A"
-          fill-opacity="0.68"
-          stroke="url(#paint1_linear_567_237)"></rect>
-        <rect
-          x="74.6055"
-          y="298.622"
-          width="154"
-          height="53"
-          rx="11.5"
-          transform="rotate(-13.908 74.6055 298.622)"
-          fill="#0A0A0A"
-          stroke="url(#paint2_linear_567_237)"></rect>
-        <rect
-          x="367.606"
-          y="311.622"
-          width="154"
-          height="53"
-          rx="11.5"
-          transform="rotate(-13.908 367.606 311.622)"
-          fill="#0A0A0A"
-          stroke="url(#paint3_linear_567_237)"></rect>
-        <rect
-          x="314.606"
-          y="174.622"
-          width="154"
-          height="53"
-          rx="11.5"
-          transform="rotate(-13.908 314.606 174.622)"
-          fill="#0A0A0A"
-          fill-opacity="0.74"
-          stroke="url(#paint4_linear_567_237)"></rect>
-        <rect
-          x="275"
-          y="37.2565"
-          width="155"
-          height="54"
-          rx="12"
-          transform="rotate(-13.908 275 37.2565)"
-          fill="#0A0A0A"
-          fill-opacity="0.6"></rect>
-        <rect
-          x="275.606"
-          y="37.6216"
-          width="154"
-          height="53"
-          rx="11.5"
-          transform="rotate(-13.908 275.606 37.6216)"
-          stroke="url(#paint5_linear_567_237)"
-          stroke-opacity="0.64"></rect>
-        <path
-          d="M318.078 202.886C317.462 204.223 318.046 205.807 319.383 206.424C320.721 207.04 322.305 206.456 322.922 205.119C323.538 203.781 322.954 202.197 321.616 201.58C320.279 200.964 318.695 201.548 318.078 202.886ZM230.079 283.885C229.462 285.223 230.046 286.807 231.384 287.423C232.721 288.04 234.305 287.456 234.922 286.118C235.539 284.781 234.954 283.197 233.617 282.58C232.279 281.963 230.695 282.548 230.079 283.885ZM370.079 338.384C369.462 339.721 370.046 341.305 371.384 341.922C372.721 342.539 374.305 341.954 374.922 340.617C375.539 339.279 374.954 337.695 373.617 337.079C372.279 336.462 370.695 337.046 370.079 338.384ZM153.079 24.3835C152.462 25.721 153.046 27.3051 154.384 27.9217C155.721 28.5383 157.305 27.954 157.922 26.6165C158.539 25.279 157.954 23.6949 156.617 23.0783C155.279 22.4617 153.695 23.0461 153.079 24.3835ZM195 155.502L195.095 155.993C217.036 151.754 230.111 153.958 238.82 159.219C247.544 164.489 251.986 172.875 256.561 181.303C261.116 189.696 265.802 198.128 275.059 203.122C284.323 208.119 298.06 209.626 320.611 204.49L320.5 204.002L320.389 203.515C297.94 208.628 284.489 207.072 275.534 202.242C266.573 197.408 262.009 189.246 257.44 180.826C252.889 172.442 248.331 163.796 239.337 158.363C230.327 152.921 216.964 150.749 194.905 155.011L195 155.502ZM232.5 285.002L232.595 285.493C254.518 281.257 268.511 283.825 278.594 289.661C288.7 295.509 294.952 304.675 301.34 313.849C307.707 322.995 314.207 332.145 324.8 337.686C335.41 343.236 350.042 345.129 372.611 339.988L372.5 339.5L372.389 339.013C349.959 344.122 335.591 342.202 325.263 336.8C314.918 331.388 308.543 322.445 302.161 313.278C295.798 304.139 289.426 294.774 279.094 288.795C268.74 282.803 254.482 280.246 232.405 284.511L232.5 285.002ZM195 155.502L195.095 155.993C217.134 151.735 228.049 145.294 233.319 137.588C238.585 129.889 238.123 121.04 237.75 112.292C237.374 103.49 237.082 94.766 242.383 86.9451C247.682 79.126 258.654 72.1031 281.111 66.9878L281 66.5003L280.889 66.0128C258.346 71.1476 247.068 78.2498 241.555 86.3841C236.043 94.5166 236.376 103.575 236.751 112.335C237.127 121.15 237.54 129.645 232.494 137.024C227.451 144.397 216.867 150.768 194.905 155.011L195 155.502ZM155.5 25.5L155.595 25.9909C177.545 21.7506 190.631 23.4873 199.346 28.06C208.065 32.6346 212.5 40.0872 217.073 47.5733C221.631 55.0346 226.324 62.5238 235.587 66.8057C244.844 71.0848 258.568 72.1227 281.111 66.9878L281 66.5003L280.889 66.0128C258.432 71.128 244.969 70.0409 236.007 65.898C227.051 61.758 222.494 54.5283 217.927 47.052C213.375 39.6005 208.811 31.8968 199.811 27.1745C190.807 22.4503 177.456 20.7494 155.405 25.0091L155.5 25.5Z"
-          fill="url(#paint6_linear_567_237)"></path>
-        <defs>
-          <linearGradient
-            id="paint0_linear_567_237"
-            x1="-42.8529"
-            y1="38.2565"
-            x2="31.751"
-            y2="154.702"
-            gradientUnits="userSpaceOnUse"
+      <!-- contenido -->
+      <div class="relative grid md:grid-cols-2 gap-10 items-center z-10">
+        <!-- texto -->
+        <div class="max-w-md">
+          <h3
+            class="font-righteous text-[24px] text-transparent bg-clip-text bg-clip-text bg-gradient-to-r from-gray-600 to-80% to-gray-200 leading-tight text-white mb-3"
           >
-            <stop stop-color="#727272"></stop>
-            <stop offset="0.451923" stop-color="#B5B5B5"></stop>
-            <stop offset="1" stop-color="#666666"></stop>
-          </linearGradient>
-          <linearGradient
-            id="paint1_linear_567_237"
-            x1="-5.85294"
-            y1="168.256"
-            x2="68.751"
-            y2="284.702"
-            gradientUnits="userSpaceOnUse"
+            Explorá tu mente a través de <span class="text-fuchsia-400"
+              >tus sueños</span
+            >
+          </h3>
+          <p class="font-inder text-[16px] text-grisclarotwo leading-relaxed">
+            Oniria transforma tus relatos en un mapa visual de emociones y
+            símbolos. Cada palabra y cada emoción que registrás se traduce en
+            conexiones que conforman tu estructura emocional.
+          </p>
+
+          <a
+            href="https://oniria3d.com.ar"
+            class="inline-flex items-center gap-2 mt-6 px-5 py-2.5 rounded-xl border border-rosaClaro/50 text-rosaClaro font-inder text-[15px] hover:bg-rosaClaro/10 transition-all duration-300"
           >
-            <stop stop-color="#727272"></stop>
-            <stop offset="0.451923" stop-color="#B5B5B5"></stop>
-            <stop offset="1" stop-color="#666666"></stop>
-          </linearGradient>
-          <linearGradient
-            id="paint2_linear_567_237"
-            x1="31.1471"
-            y1="298.256"
-            x2="105.751"
-            y2="414.702"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="#727272"></stop>
-            <stop offset="0.451923" stop-color="#B5B5B5"></stop>
-            <stop offset="1" stop-color="#666666"></stop>
-          </linearGradient>
-          <linearGradient
-            id="paint3_linear_567_237"
-            x1="324.147"
-            y1="311.257"
-            x2="398.751"
-            y2="427.702"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="#727272"></stop>
-            <stop offset="0.451923" stop-color="#B5B5B5"></stop>
-            <stop offset="1" stop-color="#666666"></stop>
-          </linearGradient>
-          <linearGradient
-            id="paint4_linear_567_237"
-            x1="271.147"
-            y1="174.256"
-            x2="345.751"
-            y2="290.702"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="#727272"></stop>
-            <stop offset="0.451923" stop-color="#B5B5B5"></stop>
-            <stop offset="1" stop-color="#666666"></stop>
-          </linearGradient>
-          <linearGradient
-            id="paint5_linear_567_237"
-            x1="232.147"
-            y1="37.2565"
-            x2="306.751"
-            y2="153.702"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="#727272"></stop>
-            <stop offset="0.451923" stop-color="#B5B5B5"></stop>
-            <stop offset="1" stop-color="#666666"></stop>
-          </linearGradient>
-          <linearGradient
-            id="paint6_linear_567_237"
-            x1="229.5"
-            y1="82"
-            x2="317.5"
-            y2="434.5"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop offset="0.119426" stop-color="#6C4075"></stop>
-            <stop offset="1" stop-color="#DEDEDE"></stop>
-          </linearGradient>
-        </defs>
-      </svg>
+            Ver más <ArrowIcon
+              className="ml-3 text-[20px] group-hover:translate-x-1 transition-transform duration-300 text-rosaClaro"
+            />
+          </a>
+        </div>
+
+        <svg
+          width="531"
+          height="364"
+          viewBox="0 0 531 364"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            y="38.2565"
+            width="155"
+            height="54"
+            rx="12"
+            transform="rotate(-13.908 0 38.2565)"
+            fill="#0A0A0A"
+            fill-opacity="0.58"></rect>
+          <rect
+            x="0.605524"
+            y="38.6216"
+            width="154"
+            height="53"
+            rx="11.5"
+            transform="rotate(-13.908 0.605524 38.6216)"
+            stroke="url(#paint0_linear_567_237)"
+            stroke-opacity="0.83"></rect>
+          <rect
+            x="37.6055"
+            y="168.622"
+            width="154"
+            height="53"
+            rx="11.5"
+            transform="rotate(-13.908 37.6055 168.622)"
+            fill="#0A0A0A"
+            fill-opacity="0.68"
+            stroke="url(#paint1_linear_567_237)"></rect>
+          <rect
+            x="74.6055"
+            y="298.622"
+            width="154"
+            height="53"
+            rx="11.5"
+            transform="rotate(-13.908 74.6055 298.622)"
+            fill="#0A0A0A"
+            stroke="url(#paint2_linear_567_237)"></rect>
+          <rect
+            x="367.606"
+            y="311.622"
+            width="154"
+            height="53"
+            rx="11.5"
+            transform="rotate(-13.908 367.606 311.622)"
+            fill="#0A0A0A"
+            stroke="url(#paint3_linear_567_237)"></rect>
+          <rect
+            x="314.606"
+            y="174.622"
+            width="154"
+            height="53"
+            rx="11.5"
+            transform="rotate(-13.908 314.606 174.622)"
+            fill="#0A0A0A"
+            fill-opacity="0.74"
+            stroke="url(#paint4_linear_567_237)"></rect>
+          <rect
+            x="275"
+            y="37.2565"
+            width="155"
+            height="54"
+            rx="12"
+            transform="rotate(-13.908 275 37.2565)"
+            fill="#0A0A0A"
+            fill-opacity="0.6"></rect>
+          <rect
+            x="275.606"
+            y="37.6216"
+            width="154"
+            height="53"
+            rx="11.5"
+            transform="rotate(-13.908 275.606 37.6216)"
+            stroke="url(#paint5_linear_567_237)"
+            stroke-opacity="0.64"></rect>
+          <path
+            d="M318.078 202.886C317.462 204.223 318.046 205.807 319.383 206.424C320.721 207.04 322.305 206.456 322.922 205.119C323.538 203.781 322.954 202.197 321.616 201.58C320.279 200.964 318.695 201.548 318.078 202.886ZM230.079 283.885C229.462 285.223 230.046 286.807 231.384 287.423C232.721 288.04 234.305 287.456 234.922 286.118C235.539 284.781 234.954 283.197 233.617 282.58C232.279 281.963 230.695 282.548 230.079 283.885ZM370.079 338.384C369.462 339.721 370.046 341.305 371.384 341.922C372.721 342.539 374.305 341.954 374.922 340.617C375.539 339.279 374.954 337.695 373.617 337.079C372.279 336.462 370.695 337.046 370.079 338.384ZM153.079 24.3835C152.462 25.721 153.046 27.3051 154.384 27.9217C155.721 28.5383 157.305 27.954 157.922 26.6165C158.539 25.279 157.954 23.6949 156.617 23.0783C155.279 22.4617 153.695 23.0461 153.079 24.3835ZM195 155.502L195.095 155.993C217.036 151.754 230.111 153.958 238.82 159.219C247.544 164.489 251.986 172.875 256.561 181.303C261.116 189.696 265.802 198.128 275.059 203.122C284.323 208.119 298.06 209.626 320.611 204.49L320.5 204.002L320.389 203.515C297.94 208.628 284.489 207.072 275.534 202.242C266.573 197.408 262.009 189.246 257.44 180.826C252.889 172.442 248.331 163.796 239.337 158.363C230.327 152.921 216.964 150.749 194.905 155.011L195 155.502ZM232.5 285.002L232.595 285.493C254.518 281.257 268.511 283.825 278.594 289.661C288.7 295.509 294.952 304.675 301.34 313.849C307.707 322.995 314.207 332.145 324.8 337.686C335.41 343.236 350.042 345.129 372.611 339.988L372.5 339.5L372.389 339.013C349.959 344.122 335.591 342.202 325.263 336.8C314.918 331.388 308.543 322.445 302.161 313.278C295.798 304.139 289.426 294.774 279.094 288.795C268.74 282.803 254.482 280.246 232.405 284.511L232.5 285.002ZM195 155.502L195.095 155.993C217.134 151.735 228.049 145.294 233.319 137.588C238.585 129.889 238.123 121.04 237.75 112.292C237.374 103.49 237.082 94.766 242.383 86.9451C247.682 79.126 258.654 72.1031 281.111 66.9878L281 66.5003L280.889 66.0128C258.346 71.1476 247.068 78.2498 241.555 86.3841C236.043 94.5166 236.376 103.575 236.751 112.335C237.127 121.15 237.54 129.645 232.494 137.024C227.451 144.397 216.867 150.768 194.905 155.011L195 155.502ZM155.5 25.5L155.595 25.9909C177.545 21.7506 190.631 23.4873 199.346 28.06C208.065 32.6346 212.5 40.0872 217.073 47.5733C221.631 55.0346 226.324 62.5238 235.587 66.8057C244.844 71.0848 258.568 72.1227 281.111 66.9878L281 66.5003L280.889 66.0128C258.432 71.128 244.969 70.0409 236.007 65.898C227.051 61.758 222.494 54.5283 217.927 47.052C213.375 39.6005 208.811 31.8968 199.811 27.1745C190.807 22.4503 177.456 20.7494 155.405 25.0091L155.5 25.5Z"
+            fill="url(#paint6_linear_567_237)"></path>
+          <defs>
+            <linearGradient
+              id="paint0_linear_567_237"
+              x1="-42.8529"
+              y1="38.2565"
+              x2="31.751"
+              y2="154.702"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#727272"></stop>
+              <stop offset="0.451923" stop-color="#B5B5B5"></stop>
+              <stop offset="1" stop-color="#666666"></stop>
+            </linearGradient>
+            <linearGradient
+              id="paint1_linear_567_237"
+              x1="-5.85294"
+              y1="168.256"
+              x2="68.751"
+              y2="284.702"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#727272"></stop>
+              <stop offset="0.451923" stop-color="#B5B5B5"></stop>
+              <stop offset="1" stop-color="#666666"></stop>
+            </linearGradient>
+            <linearGradient
+              id="paint2_linear_567_237"
+              x1="31.1471"
+              y1="298.256"
+              x2="105.751"
+              y2="414.702"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#727272"></stop>
+              <stop offset="0.451923" stop-color="#B5B5B5"></stop>
+              <stop offset="1" stop-color="#666666"></stop>
+            </linearGradient>
+            <linearGradient
+              id="paint3_linear_567_237"
+              x1="324.147"
+              y1="311.257"
+              x2="398.751"
+              y2="427.702"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#727272"></stop>
+              <stop offset="0.451923" stop-color="#B5B5B5"></stop>
+              <stop offset="1" stop-color="#666666"></stop>
+            </linearGradient>
+            <linearGradient
+              id="paint4_linear_567_237"
+              x1="271.147"
+              y1="174.256"
+              x2="345.751"
+              y2="290.702"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#727272"></stop>
+              <stop offset="0.451923" stop-color="#B5B5B5"></stop>
+              <stop offset="1" stop-color="#666666"></stop>
+            </linearGradient>
+            <linearGradient
+              id="paint5_linear_567_237"
+              x1="232.147"
+              y1="37.2565"
+              x2="306.751"
+              y2="153.702"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#727272"></stop>
+              <stop offset="0.451923" stop-color="#B5B5B5"></stop>
+              <stop offset="1" stop-color="#666666"></stop>
+            </linearGradient>
+            <linearGradient
+              id="paint6_linear_567_237"
+              x1="229.5"
+              y1="82"
+              x2="317.5"
+              y2="434.5"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0.119426" stop-color="#6C4075"></stop>
+              <stop offset="1" stop-color="#DEDEDE"></stop>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
     </div>
   </section>
 
   <!-- fila: Estadísticas + IA -->
   <div class="mt-6 grid md:grid-cols-2 gap-6">
     <div
-      class="rounded-3xl border border-white/12 bg-white/[0.03] backdrop-blur-md p-6 md:p-7 shadow-[0_8px_40px_rgba(0,0,0,.35)]"
+      class="rounded-3xl border border-white/12 bg-gray-900/[0.93] backdrop-blur-md p-6 md:p-7 shadow-[0_8px_40px_rgba(0,0,0,.35)]"
     >
       <h5 class="font-righteous text-[20px] text-grisclarotwo">Estadísticas</h5>
 
@@ -361,7 +368,7 @@ const ghostCards = Array.from({ length: 7 });
 
     <!-- IA -->
     <div
-      class="rounded-3xl border border-white/12 bg-white/[0.03] backdrop-blur-md p-6 md:p-7 shadow-[0_8px_40px_rgba(0,0,0,.35)]"
+      class="rounded-3xl border border-white/12 bg-gray-900/[0.93] backdrop-blur-md p-6 md:p-7 shadow-[0_8px_40px_rgba(0,0,0,.35)]"
     >
       <h5 class="font-righteous text-[20px] text-grisclarotwo">
         Potenciado por IA
@@ -408,7 +415,7 @@ const ghostCards = Array.from({ length: 7 });
 
 <script is:inline>
   const area = document.currentScript?.previousElementSibling?.querySelector(
-    ".relative.h-\\[220px\\]",
+    ".relative.h-\\[220px\\]"
   );
   const tooltip = document.getElementById("tooltip");
 
