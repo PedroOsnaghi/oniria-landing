@@ -142,10 +142,10 @@ const { title, description, url, image } = Astro.props;
 
       // Configurar Lenis con parámetros más suaves
       window.lenis = new Lenis({
-        duration: 2.0, // Más lento y suave (era 1.2)
+        duration: 1.2, // Más lento y suave (era 1.2)
         easing: (t) => 1 - Math.pow(1 - t, 3), // Cubic out más suave
-        touchMultiplier: 1.5, // Menos sensible al touch (era 2)
-        wheelMultiplier: 0.8, // Menos sensible al wheel
+        touchMultiplier: 1.8, // Menos sensible al touch (era 2)
+        wheelMultiplier: 0.9, // Menos sensible al wheel
         infinite: false,
         smoothWheel: true, // Suavizar wheel
       });
