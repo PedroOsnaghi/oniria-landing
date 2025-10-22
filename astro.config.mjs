@@ -11,7 +11,7 @@ import glsl from "vite-plugin-glsl";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://www.oniria.3d.com.ar", // TODO
+  site: "https://www.oniria3d.com.ar", // TODO
   integrations: [react(), sitemap()],
 
   vite: {
