@@ -19,7 +19,7 @@ import CheckIcon from "../assets/icon/CheckIcon.astro";
     completa te espera.
   </h4>
 
-  <div class="mt-8 grid grid-cols-[1.05fr_1fr_1fr] gap-x-8">
+  <div class="hidden lg:grid mt-8 lg:grid-cols-[1.05fr_1fr_1fr] gap-x-8">
     <div class="pb-5">
       <div class="flex items-center gap-3 md:justify-start justify-center">
         <span class="font-inder text-sm text-white" id="lbl-monthly"
@@ -251,34 +251,255 @@ import CheckIcon from "../assets/icon/CheckIcon.astro";
       >
     </div>
   </div>
+
+  <!-- Mobile version-->
+  <div class="block lg:hidden mt-8 grid grid-cols-[1fr] gap-x-8">
+    <div class="pb-5">
+      <div class="flex items-center gap-3 md:justify-start justify-center">
+        <span class="font-inder text-sm text-white" id="lbl-monthly-mobile"
+          >Mensual</span
+        >
+        <button
+          id="billing-toggle-mobile"
+          class="relative w-16 h-8 rounded-full bg-neutral-700 p-1 flex items-center transition outline-none focus:ring-2 focus:ring-fuchsia-500/60"
+        >
+          <div
+            id="toggle-bg-mobile"
+            class="absolute inset-0 rounded-full transition"
+          >
+          </div>
+          <div
+            id="toggle-knob-mobile"
+            class="relative w-6 h-6 rounded-full bg-white transform transition translate-x-0"
+          >
+          </div>
+        </button>
+        <span class="font-inder text-sm" id="lbl-yearly-mobile"
+          >Anual <span class="text-green-400">(-20%)</span></span
+        >
+      </div>
+      <hr class="mt-6 border-white/10" />
+    </div>
+
+    <div class="pb-5">
+      <h4 class="font-righteous text-fuchsia-300">Free</h4>
+      <div class="mt-3">
+        <div class="flex items-end gap-1 leading-none">
+          <span class="text-4xl font-extrabold text-white"
+            >$<span id="price-free-mobile">0</span></span
+          >
+          <span class="font-inder text-neutral-400 text-sm mb-1">/mes</span>
+        </div>
+        <p class="font-inder text-neutral-400 text-sm mt-2">
+          Comenzá tu viaje onírico hoy.
+        </p>
+      </div>
+      <a
+        href="https://oniria3d.com.ar/"
+        class="group font-inder mt-5 inline-flex w-full items-center justify-center rounded-full px-4 py-2 text-sm bg-white/10 text-white hover:bg-white/20 transition"
+      >
+        Obtener <ArrowIcon
+          className="ml-3 text-[20px] group-hover:translate-x-1 transition-transform duration-300"
+        />
+      </a>
+      <hr class="mt-5 border-white/10" />
+    </div>
+
+    <div class="pt-6">
+      <h3 class="font-inder text-neutral-100 font-semibold mb-2">
+        Experiencia
+      </h3>
+    </div>
+    <!-- Fila 1 -->
+    <div class="h-10 flex items-center border-b border-white/10">
+      <span class="flex items-center gap-2 text-fuchsia-300"
+        ><CheckIcon /> 4 interpretaciones por semana</span
+      >
+    </div>
+    <!-- Fila 2 -->
+    <div class="h-10 flex items-center border-b border-white/10">
+      <span class="flex items-center gap-2 text-fuchsia-300"
+        ><CheckIcon />Habitación 3D interactiva</span
+      >
+    </div>
+    <!-- Fila 3 -->
+    <div class="h-10 flex items-center border-b border-white/10">
+      <span class="flex items-center gap-2 text-fuchsia-300"
+        ><CheckIcon />Interpretación simbólica básica</span
+      >
+    </div>
+    <div class="pt-6">
+      <h3 class="font-inder text-neutral-100 font-semibold mb-2">
+        Funcionalidades
+      </h3>
+    </div>
+
+    <!-- Fila 4 -->
+    <div class="h-10 flex items-center border-b border-white/10">
+      <span class="flex items-center gap-2 text-fuchsia-300"
+        ><CheckIcon />Guarda tus sueños en el historial onírico</span
+      >
+    </div>
+    <!-- Fila 5 -->
+    <div class="h-10 flex items-center border-b border-white/10">
+      <span class="flex items-center gap-2 text-fuchsia-300"
+        ><CheckIcon />Estadísticas básicas</span
+      >
+    </div>
+    <!-- ===== Sección: Soporte ===== -->
+    <div class="pt-6">
+      <h3 class="font-inder text-neutral-100 font-semibold mb-2">Soporte</h3>
+    </div>
+    <!-- Fila 8 -->
+    <div class="h-10 flex items-center border-b border-white/10">
+      <span class="flex items-center gap-2 text-fuchsia-300"
+        ><CheckIcon />Cosméticos básicos</span
+      >
+    </div>
+    <!-- Fila 9 -->
+    <div class="h-10 flex items-center pb-5 border-b border-white/10">
+      <span class="flex items-center gap-2 text-fuchsia-300"
+        ><CheckIcon />Escenarios básicos</span
+      >
+    </div>
+
+    <div class="pb-5 pt-12">
+      <h4 class="font-righteous text-fuchsia-300">Plus</h4>
+      <div class="mt-3">
+        <div class="flex items-end gap-1 leading-none">
+          <span class="text-4xl font-extrabold text-white"
+            >$<span id="price-plus-mobile">49</span></span
+          >
+          <span class="font-inder text-neutral-400 text-sm mb-1">/mes</span>
+        </div>
+        <p class="font-inder text-neutral-400 text-sm mt-2">
+          Explorá tus sueños sin límites.
+        </p>
+      </div>
+      <a
+        href="https://oniria3d.com.ar/"
+        class="group font-inder mt-5 inline-flex w-full items-center justify-center rounded-full px-4 py-2 text-sm text-white bg-gradient-to-r from-fuchsia-500 to-violet-500 hover:opacity-95 transition shadow-[0_0_40px_10px_rgba(216,70,239,.25)]"
+      >
+        Obtener <ArrowIcon
+          className="ml-3 text-[20px] group-hover:translate-x-1 transition-transform duration-300"
+        />
+      </a>
+      <hr class="mt-5 border-white/10" />
+    </div>
+
+    <div class="pt-6">
+      <h3 class="font-inder text-neutral-100 font-semibold mb-2">
+        Experiencia
+      </h3>
+    </div>
+    <!-- Fila 1 -->
+    <div class="h-10 flex items-center border-b border-white/10">
+      <span class="flex items-center gap-2 text-fuchsia-300"
+        ><CheckIcon />Interpretaciones Ilimitadas</span
+      >
+    </div>
+
+    <!-- Fila 2 -->
+    <div class="h-10 flex items-center border-b border-white/10">
+      <span class="flex items-center gap-2 text-fuchsia-300"
+        ><CheckIcon />Habitación 3D interactiva</span
+      >
+    </div>
+    <!-- Fila 3 -->
+    <div class="h-10 flex items-center border-b border-white/10">
+      <span class="flex items-center gap-2 text-fuchsia-300"
+        ><CheckIcon />Análisis profundo de tus sueños</span
+      >
+    </div>
+
+    <div class="pt-6">
+      <h3 class="font-inder text-neutral-100 font-semibold mb-2">
+        Funcionalidades
+      </h3>
+    </div>
+
+    <!-- Fila 4 -->
+    <div class="h-10 flex items-center border-b border-white/10">
+      <span class="flex items-center gap-2 text-fuchsia-300"
+        ><CheckIcon />Guarda tus sueños en el historial onírico</span
+      >
+    </div>
+
+    <!-- Fila 5 -->
+    <div class="h-10 flex items-center border-b border-white/10">
+      <span class="flex items-center gap-2 text-fuchsia-300"
+        ><CheckIcon /> Análisis detallado</span
+      >
+    </div>
+    <!-- Fila 6 -->
+    <div class="h-10 flex items-center border-b border-white/10">
+      <span class="flex items-center gap-2 text-fuchsia-300"
+        ><CheckIcon />Análisis de tus sueños según patrones personalizados</span
+      >
+    </div>
+    <!-- Fila 7 -->
+    <div class="h-10 flex items-center border-b border-white/10">
+      <span class="flex items-center gap-2 text-fuchsia-300"
+        ><CheckIcon /> Acceso a la comunidad</span
+      >
+    </div>
+
+    <!-- ===== Sección: Soporte ===== -->
+    <div class="pt-6">
+      <h3 class="font-inder text-neutral-100 font-semibold mb-2">Soporte</h3>
+    </div>
+
+    <!-- Fila 8 -->
+    <div class="h-10 flex items-center border-b border-white/10">
+      <span class="flex items-center gap-2 text-fuchsia-300"
+        ><CheckIcon />Acceso a nuevos estilos visuales</span
+      >
+    </div>
+
+    <!-- Fila 9 -->
+    <div class="h-10 flex items-center">
+      <span class="flex items-center gap-2 text-fuchsia-300"
+        ><CheckIcon />Escenarios exclusivos</span
+      >
+    </div>
+  </div>
 </section>
 
 <!-- Toggle mensual/anual (-20%) -->
 <script is:inline>
-  const toggle = document.getElementById("billing-toggle");
-  const knob = document.getElementById("toggle-knob");
-  const bg = document.getElementById("toggle-bg");
-  const pricePlus = document.getElementById("price-plus");
-  const priceFree = document.getElementById("price-free");
-  const lblMonthly = document.getElementById("lbl-monthly");
-  const lblYearly = document.getElementById("lbl-yearly");
+  function initBillingToggle(prefix = "") {
+    const toggle = document.getElementById(`billing-toggle${prefix}`);
+    const knob = document.getElementById(`toggle-knob${prefix}`);
+    const bg = document.getElementById(`toggle-bg${prefix}`);
+    const pricePlus = document.getElementById(`price-plus${prefix}`);
+    const priceFree = document.getElementById(`price-free${prefix}`);
+    const lblMonthly = document.getElementById(`lbl-monthly${prefix}`);
+    const lblYearly = document.getElementById(`lbl-yearly${prefix}`);
 
-  let yearly = false;
-  function updateUI() {
-    knob.classList.toggle("translate-x-8", yearly);
-    bg.className =
-      "absolute inset-0 rounded-full transition " +
-      (yearly ? "bg-gradient-to-r from-fuchsia-500 to-violet-500" : "");
-    lblMonthly.className =
-      "font-inder text-sm " + (yearly ? "text-neutral-400" : "text-white");
-    lblYearly.className =
-      "font-inder text-sm " + (yearly ? "text-white" : "text-neutral-400");
-    priceFree.textContent = "0";
-    pricePlus.textContent = yearly ? "39" : "49";
-  }
-  toggle?.addEventListener("click", () => {
-    yearly = !yearly;
+    if (!toggle) return;
+
+    let yearly = false;
+    function updateUI() {
+      knob.classList.toggle("translate-x-8", yearly);
+      bg.className =
+        "absolute inset-0 rounded-full transition " +
+        (yearly ? "bg-gradient-to-r from-fuchsia-500 to-violet-500" : "");
+      lblMonthly.className =
+        "font-inder text-sm " + (yearly ? "text-neutral-400" : "text-white");
+      lblYearly.className =
+        "font-inder text-sm " + (yearly ? "text-white" : "text-neutral-400");
+      priceFree.textContent = "0";
+      pricePlus.textContent = yearly ? "39" : "49";
+    }
+
+    toggle.addEventListener("click", () => {
+      yearly = !yearly;
+      updateUI();
+    });
+
     updateUI();
-  });
-  updateUI();
+  }
+
+  initBillingToggle("");
+  initBillingToggle("-mobile");
 </script>
